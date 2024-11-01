@@ -1,0 +1,25 @@
+Training parameters:
+----------
+number of trainable parameters:  1034496
+batch size:  8
+num epochs:  200
+Epoch 0/199
+----------
+
+
+
+
+
+
+
+
+Traceback (most recent call last):
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/driver_scratchpad.py", line 382, in <module>
+    main_train(data_config, model_config, args.pretrained_path, args.save_path, args.training_strategy, device=args.device)
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/driver_scratchpad.py", line 361, in main_train
+    model = train_dl(model, dataset_dict, dataset_sizes, criterion, optimizer, exp_lr_scheduler, save_path, num_epochs=training_params['num_epochs'], bs=training_params['batch_size'], device=device, retain_graph=retain_graph, neg2pos_ratio=data_config['data']['negative_to_positive_ratio'], reg_multiplier=model_config['training']['reg_multiplier'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/train.py", line 199, in train_dl
+    running_loss += loss.item() * inputs.size(0)
+                    ^^^^^^^^^^^
+KeyboardInterrupt

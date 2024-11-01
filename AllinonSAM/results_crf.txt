@@ -1,0 +1,2 @@
+./biastuning/DIAS , Best val loss: 0.873711, best val dice: 0.125762
+./biastuning/DIAS , Best val loss: 0.873711, best val dice: 0.125762

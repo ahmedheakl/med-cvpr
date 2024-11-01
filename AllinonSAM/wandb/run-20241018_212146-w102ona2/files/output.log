@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/home/abdelrahman.elsayed/sarim_code/train_baselines.py", line 266, in <module>
+    main_train(data_config, model_config, args.pretrained_path, args.save_path, args.training_strategy, device=args.device)
+  File "/home/abdelrahman.elsayed/sarim_code/train_baselines.py", line 234, in main_train
+    model = train_dl(
+  File "/home/abdelrahman.elsayed/sarim_code/train.py", line 218, in train_dl
+    outputs, reg_loss = model(inputs, text)
+  File "/home/abdelrahman.elsayed/.conda/envs/s-sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/abdelrahman.elsayed/sarim_code/vit_seg_modeling.py", line 390, in forward
+    x = self.decoder(x, features)
+  File "/home/abdelrahman.elsayed/.conda/envs/s-sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/abdelrahman.elsayed/sarim_code/vit_seg_modeling.py", line 366, in forward
+    x = decoder_block(x, skip=skip)
+  File "/home/abdelrahman.elsayed/.conda/envs/s-sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/abdelrahman.elsayed/sarim_code/vit_seg_modeling.py", line 312, in forward
+    x = torch.cat([x, skip], dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 64 for tensor number 1 in the list.
+Training parameters:
+----------
+number of trainable parameters:  107681297
+batch size:  2
+num epochs:  500
+Epoch 0/499
+----------

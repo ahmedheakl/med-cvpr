@@ -1,0 +1,5133 @@
+Training parameters:
+----------
+number of trainable parameters:  1034496
+batch size:  8
+num epochs:  200
+Epoch 0/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 0:  99%|▉| 124/125 [00:46<00:00,  4.23it/s, loss=0.379, dice=tensor(
+
+
+
+
+
+
+val Epoch 0:  90%|▉| 113/125 [00:11<00:01, 10.31it/s, loss=0.758, dice=tensor(2.
+
+val Loss: 0.7222 Dice: 0.2643
+Epoch 1/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 1:  98%|▉| 123/125 [00:29<00:00,  4.23it/s, loss=0.359, dice=tensor(
+
+
+
+
+
+
+val Epoch 1:  87%|▊| 109/125 [00:11<00:01, 10.40it/s, loss=0.364, dice=tensor(5.
+val Loss: 0.3830 Dice: 0.6247
+Epoch 2/199
+
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 2:  98%|▉| 123/125 [00:29<00:00,  4.22it/s, loss=0.462, dice=tensor(
+
+
+
+
+
+
+val Epoch 2:  91%|▉| 114/125 [00:11<00:01, 10.35it/s, loss=0.407, dice=tensor(5.
+val Loss: 0.3586 Dice: 0.6460
+Epoch 3/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 3:  92%|▉| 115/125 [00:28<00:02,  4.18it/s, loss=0.359, dice=tensor(
+
+
+
+
+
+
+
+val Epoch 3:  93%|▉| 116/125 [00:11<00:00, 10.34it/s, loss=0.406, dice=tensor(5.
+val Loss: 0.3500 Dice: 0.6536
+Epoch 4/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 4:  94%|▉| 117/125 [00:28<00:01,  4.19it/s, loss=0.332, dice=tensor(
+
+
+
+
+
+
+
+val Epoch 4:  96%|▉| 120/125 [00:12<00:00, 10.42it/s, loss=0.297, dice=tensor(5.
+val Loss: 0.3436 Dice: 0.6631
+Epoch 5/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 5:  94%|▉| 118/125 [00:28<00:01,  4.19it/s, loss=0.374, dice=tensor(
+
+
+
+
+
+
+val Epoch 5:  82%|▊| 103/125 [00:10<00:02, 10.34it/s, loss=0.332, dice=tensor(5.
+
+val Epoch 5: 100%|█| 125/125 [00:12<00:00, 10.57it/s, loss=0.373, dice=tensor(5.
+Epoch 6/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 6:  95%|▉| 119/125 [00:29<00:01,  4.20it/s, loss=0.386, dice=tensor(
+
+
+
+
+
+
+val Epoch 6:  86%|▊| 107/125 [00:10<00:01, 10.36it/s, loss=0.293, dice=tensor(5.
+
+val Loss: 0.3215 Dice: 0.6816
+Epoch 7/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 7:  97%|▉| 121/125 [00:29<00:00,  4.21it/s, loss=0.32, dice=tensor(5
+
+
+
+
+
+
+val Epoch 7:  87%|▊| 109/125 [00:11<00:01, 10.35it/s, loss=0.296, dice=tensor(5.
+
+val Loss: 0.3181 Dice: 0.6864
+Epoch 8/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 8:  98%|▉| 122/125 [00:29<00:00,  4.22it/s, loss=0.39, dice=tensor(5
+
+
+
+
+
+
+val Epoch 8:  88%|▉| 110/125 [00:11<00:01, 10.26it/s, loss=0.386, dice=tensor(5.
+
+val Loss: 0.3002 Dice: 0.7038
+Epoch 9/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 9:  98%|▉| 122/125 [00:29<00:00,  4.18it/s, loss=0.334, dice=tensor(
+
+
+
+
+
+
+val Epoch 9:  90%|▉| 113/125 [00:11<00:01, 10.30it/s, loss=0.374, dice=tensor(5.
+
+train Epoch 10:   0%|                                   | 0/125 [00:00<?, ?it/s]
+Epoch 10/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 10:  97%|▉| 121/125 [00:29<00:00,  4.21it/s, loss=0.333, dice=tensor
+
+
+
+
+
+
+val Epoch 10:  87%|▊| 109/125 [00:11<00:01, 10.36it/s, loss=0.352, dice=tensor(5
+val Loss: 0.3208 Dice: 0.6824
+Epoch 11/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 11:  93%|▉| 116/125 [00:28<00:02,  4.16it/s, loss=0.273, dice=tensor
+
+
+
+
+
+
+
+val Epoch 11:  94%|▉| 118/125 [00:12<00:00, 10.27it/s, loss=0.441, dice=tensor(5
+val Loss: 0.3702 Dice: 0.6387
+Epoch 12/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 12:  96%|▉| 120/125 [00:29<00:01,  4.19it/s, loss=0.269, dice=tensor
+
+
+
+
+
+
+val Epoch 12:  85%|▊| 106/125 [00:10<00:01, 10.33it/s, loss=0.606, dice=tensor(3
+val Loss: 0.5309 Dice: 0.4691
+Epoch 13/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 13:  98%|▉| 123/125 [00:30<00:00,  4.19it/s, loss=0.258, dice=tensor
+
+
+
+
+
+
+val Epoch 13:  92%|▉| 115/125 [00:11<00:00, 10.15it/s, loss=0.284, dice=tensor(5
+val Loss: 0.2706 Dice: 0.7325
+Epoch 14/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 14:  98%|▉| 123/125 [00:30<00:00,  4.20it/s, loss=0.24, dice=tensor(
+
+
+
+
+
+
+val Epoch 14:  91%|▉| 114/125 [00:11<00:01, 10.32it/s, loss=0.892, dice=tensor(3
+val Loss: 0.8313 Dice: 0.4078
+Epoch 15/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 15:  95%|▉| 119/125 [00:28<00:01,  4.19it/s, loss=0.309, dice=tensor
+
+
+
+
+
+
+val Epoch 15:  83%|▊| 104/125 [00:10<00:02, 10.25it/s, loss=0.228, dice=tensor(5
+val Loss: 0.2708 Dice: 0.7330
+Epoch 16/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 16:  98%|▉| 123/125 [00:30<00:00,  4.20it/s, loss=0.244, dice=tensor
+
+
+
+
+
+
+val Epoch 16:  90%|▉| 113/125 [00:11<00:01, 10.38it/s, loss=0.291, dice=tensor(5
+val Loss: 0.3108 Dice: 0.7003
+Epoch 17/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 17:  94%|▉| 118/125 [00:28<00:01,  4.16it/s, loss=0.334, dice=tensor
+
+
+
+
+
+
+
+val Epoch 17:  98%|▉| 122/125 [00:12<00:00, 10.48it/s, loss=0.208, dice=tensor(5
+val Loss: 0.2577 Dice: 0.7444
+Epoch 18/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 18:  95%|▉| 119/125 [00:29<00:01,  4.20it/s, loss=0.241, dice=tensor
+
+
+
+
+
+
+
+val Epoch 18:  95%|▉| 119/125 [00:12<00:00, 10.32it/s, loss=0.738, dice=tensor(2
+val Loss: 0.6327 Dice: 0.3739
+Epoch 19/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 19:  97%|▉| 121/125 [00:29<00:00,  4.17it/s, loss=0.186, dice=tensor
+
+
+
+
+
+
+val Epoch 19:  86%|▊| 108/125 [00:11<00:01, 10.29it/s, loss=0.338, dice=tensor(5
+val Loss: 0.2816 Dice: 0.7207
+Epoch 20/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 20:  93%|▉| 116/125 [00:28<00:02,  4.17it/s, loss=0.244, dice=tensor
+
+
+
+
+
+
+
+val Epoch 20:  94%|▉| 117/125 [00:11<00:00, 10.29it/s, loss=0.695, dice=tensor(3
+val Loss: 0.8070 Dice: 0.4070
+Epoch 21/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 21:  95%|▉| 119/125 [00:29<00:01,  4.19it/s, loss=0.237, dice=tensor
+
+
+
+
+
+
+val Epoch 21:  83%|▊| 104/125 [00:10<00:02, 10.20it/s, loss=0.555, dice=tensor(3
+val Loss: 0.5922 Dice: 0.3867
+Epoch 22/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 22:  98%|▉| 123/125 [00:30<00:00,  4.20it/s, loss=0.224, dice=tensor
+
+
+
+
+
+
+val Epoch 22:  90%|▉| 113/125 [00:11<00:01, 10.28it/s, loss=0.29, dice=tensor(5.
+val Loss: 0.2724 Dice: 0.7328
+Epoch 23/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 23:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 23:  98%|▉| 122/125 [00:12<00:00, 10.35it/s, loss=0.959, dice=tensor(0
+val Loss: 0.9363 Dice: 0.0659
+Epoch 24/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 24:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.274, dice=tensor
+
+
+
+
+
+
+val Epoch 24:  90%|▉| 112/125 [00:11<00:01, 10.34it/s, loss=0.319, dice=tensor(4
+val Loss: 0.4055 Dice: 0.5804
+Epoch 25/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 25:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 25:  96%|▉| 120/125 [00:12<00:00, 10.42it/s, loss=0.22, dice=tensor(6.
+val Loss: 0.2394 Dice: 0.7609
+Epoch 26/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 26:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 26:  98%|▉| 122/125 [00:12<00:00, 10.48it/s, loss=0.999, dice=tensor(0
+val Loss: 0.9641 Dice: 0.0417
+Epoch 27/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 27:  95%|▉| 119/125 [00:29<00:01,  4.18it/s, loss=0.205, dice=tensor
+
+
+
+
+
+
+
+train Epoch 28:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.3122 Dice: 0.6866
+Epoch 28/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 28:  98%|▉| 123/125 [00:29<00:00,  4.20it/s, loss=0.29, dice=tensor(
+
+
+
+
+
+
+val Epoch 28:  90%|▉| 113/125 [00:11<00:01, 10.23it/s, loss=0.215, dice=tensor(6
+
+train Epoch 29:   0%|                                   | 0/125 [00:00<?, ?it/s]
+Epoch 29/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 29:  98%|▉| 123/125 [00:30<00:00,  4.19it/s, loss=0.263, dice=tensor
+
+
+
+
+
+
+val Epoch 29:  91%|▉| 114/125 [00:11<00:01, 10.33it/s, loss=0.3, dice=tensor(6.0
+val Loss: 0.2457 Dice: 0.7575
+Epoch 30/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 30:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 30:  97%|▉| 121/125 [00:12<00:00, 10.42it/s, loss=0.204, dice=tensor(6
+val Loss: 0.2379 Dice: 0.7642
+Epoch 31/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 31:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 31:  98%|▉| 122/125 [00:12<00:00, 10.45it/s, loss=0.702, dice=tensor(5
+val Loss: 0.4241 Dice: 0.7081
+Epoch 32/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 32:  97%|▉| 121/125 [00:29<00:00,  4.17it/s, loss=0.228, dice=tensor
+
+
+
+
+
+
+
+train Epoch 33:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.4136 Dice: 0.5864
+Epoch 33/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 33:  99%|▉| 124/125 [00:30<00:00,  4.20it/s, loss=0.234, dice=tensor
+
+
+
+
+
+
+val Epoch 33:  93%|▉| 116/125 [00:11<00:00, 10.32it/s, loss=0.223, dice=tensor(6
+val Loss: 0.2477 Dice: 0.7530
+Epoch 34/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 34:  95%|▉| 119/125 [00:29<00:01,  4.15it/s, loss=0.26, dice=tensor(
+
+
+
+
+
+
+
+val Epoch 34:  98%|▉| 123/125 [00:12<00:00, 10.43it/s, loss=0.253, dice=tensor(6
+val Loss: 0.2277 Dice: 0.7737
+Epoch 35/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 35:   1%| | 1/125 [00:00<01:12,  1.72it/s, loss=0.181, dice=tensor(6.5
+
+
+
+
+
+
+val Epoch 35:  96%|▉| 120/125 [00:12<00:00, 10.43it/s, loss=0.212, dice=tensor(6
+val Loss: 0.2043 Dice: 0.7973
+Epoch 36/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 36:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 36:  97%|▉| 121/125 [00:12<00:00, 10.42it/s, loss=0.256, dice=tensor(5
+val Loss: 0.3424 Dice: 0.7304
+Epoch 37/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 37:  97%|▉| 121/125 [00:29<00:00,  4.18it/s, loss=0.273, dice=tensor
+
+
+
+
+
+
+val Epoch 37:  88%|▉| 110/125 [00:11<00:01, 10.34it/s, loss=0.187, dice=tensor(6
+
+val Loss: 0.1974 Dice: 0.8032
+Epoch 38/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 38:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.161, dice=tensor
+
+
+
+
+
+
+val Epoch 38:  89%|▉| 111/125 [00:11<00:01, 10.32it/s, loss=0.41, dice=tensor(5.
+val Loss: 0.3261 Dice: 0.6896
+Epoch 39/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 39:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 39:  95%|▉| 119/125 [00:12<00:00, 10.36it/s, loss=0.199, dice=tensor(6
+val Loss: 0.2468 Dice: 0.7505
+Epoch 40/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 40:  97%|▉| 121/125 [00:29<00:00,  4.21it/s, loss=0.175, dice=tensor
+
+
+
+
+
+
+
+train Epoch 41:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2397 Dice: 0.7634
+Epoch 41/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 41:  99%|▉| 124/125 [00:30<00:00,  4.20it/s, loss=0.234, dice=tensor
+
+
+
+
+
+
+val Epoch 41:  93%|▉| 116/125 [00:11<00:00, 10.26it/s, loss=0.2, dice=tensor(6.4
+
+train Epoch 42:   0%|                                   | 0/125 [00:00<?, ?it/s]
+Epoch 42/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 42:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 42:  94%|▉| 118/125 [00:12<00:00, 10.26it/s, loss=0.246, dice=tensor(6
+val Loss: 0.2161 Dice: 0.7861
+Epoch 43/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 43:  96%|▉| 120/125 [00:29<00:01,  4.20it/s, loss=0.266, dice=tensor
+
+
+
+
+
+
+
+train Epoch 44:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 1.0158 Dice: 0.0001
+Epoch 44/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 44:  97%|▉| 121/125 [00:29<00:00,  4.20it/s, loss=0.195, dice=tensor
+
+
+
+
+
+
+val Epoch 44:  89%|▉| 111/125 [00:11<00:01, 10.25it/s, loss=0.205, dice=tensor(6
+val Loss: 0.2226 Dice: 0.7855
+Epoch 45/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 45:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 45:  95%|▉| 119/125 [00:11<00:00, 10.38it/s, loss=0.331, dice=tensor(5
+val Loss: 0.5025 Dice: 0.6459
+Epoch 46/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 46:  96%|▉| 120/125 [00:29<00:01,  4.19it/s, loss=0.185, dice=tensor
+
+
+
+
+
+
+val Epoch 46:  86%|▊| 108/125 [00:10<00:01, 10.33it/s, loss=0.24, dice=tensor(6.
+
+train Epoch 47:   0%|                                   | 0/125 [00:00<?, ?it/s]
+Epoch 47/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 47:  99%|▉| 124/125 [00:30<00:00,  4.20it/s, loss=0.179, dice=tensor
+
+
+
+
+
+
+val Epoch 47:  92%|▉| 115/125 [00:11<00:00, 10.21it/s, loss=0.21, dice=tensor(6.
+val Loss: 0.1982 Dice: 0.8037
+Epoch 48/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 48:  95%|▉| 119/125 [00:29<00:01,  4.18it/s, loss=0.221, dice=tensor
+
+
+
+
+
+
+
+train Epoch 49:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2628 Dice: 0.7406
+Epoch 49/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 49:  98%|▉| 123/125 [00:30<00:00,  4.18it/s, loss=0.196, dice=tensor
+
+
+
+
+
+
+val Epoch 49:  90%|▉| 112/125 [00:11<00:01, 10.27it/s, loss=0.255, dice=tensor(6
+val Loss: 0.2298 Dice: 0.7776
+Epoch 50/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 50:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+train Epoch 51:   3%| | 4/125 [00:01<00:38,  3.14it/s, loss=0.171, dice=tensor(6
+val Loss: 0.4312 Dice: 0.5523
+Epoch 51/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 51:  97%|▉| 121/125 [00:29<00:00,  4.20it/s, loss=0.183, dice=tensor
+
+
+
+
+
+
+
+train Epoch 52:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2023 Dice: 0.8027
+Epoch 52/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 52:  98%|▉| 123/125 [00:30<00:00,  4.19it/s, loss=0.145, dice=tensor
+
+
+
+
+
+
+val Epoch 52:  91%|▉| 114/125 [00:11<00:01, 10.31it/s, loss=0.317, dice=tensor(5
+val Loss: 0.3310 Dice: 0.7023
+Epoch 53/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 53:  94%|▉| 118/125 [00:28<00:01,  4.18it/s, loss=0.227, dice=tensor
+
+
+
+
+
+
+
+val Epoch 53:  98%|▉| 122/125 [00:12<00:00, 10.44it/s, loss=0.243, dice=tensor(5
+val Loss: 0.2786 Dice: 0.7204
+Epoch 54/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 54:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.2, dice=tensor(6
+
+
+
+
+
+
+val Epoch 54:  90%|▉| 112/125 [00:11<00:01, 10.30it/s, loss=1, dice=tensor(0.140
+val Loss: 0.9902 Dice: 0.0178
+Epoch 55/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 55:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 55:  96%|▉| 120/125 [00:12<00:00, 10.41it/s, loss=0.255, dice=tensor(6
+val Loss: 0.2422 Dice: 0.7604
+Epoch 56/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 56:  97%|▉| 121/125 [00:29<00:00,  4.19it/s, loss=0.157, dice=tensor
+
+
+
+
+
+
+
+train Epoch 57:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.9950 Dice: 0.0128
+Epoch 57/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 57:  99%|▉| 124/125 [00:30<00:00,  4.21it/s, loss=0.328, dice=tensor
+
+
+
+
+
+
+val Epoch 57:  94%|▉| 117/125 [00:11<00:00, 10.33it/s, loss=0.923, dice=tensor(1
+val Loss: 0.8646 Dice: 0.1296
+Epoch 58/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 58:  96%|▉| 120/125 [00:29<00:01,  4.19it/s, loss=0.165, dice=tensor
+
+
+
+
+
+
+
+train Epoch 59:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2896 Dice: 0.7026
+Epoch 59/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 59:  98%|▉| 123/125 [00:30<00:00,  4.21it/s, loss=0.166, dice=tensor
+
+
+
+
+
+
+val Epoch 59:  92%|▉| 115/125 [00:11<00:00, 10.33it/s, loss=0.173, dice=tensor(6
+val Loss: 0.2124 Dice: 0.7876
+Epoch 60/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 60:  95%|▉| 119/125 [00:29<00:01,  4.19it/s, loss=0.2, dice=tensor(6
+
+
+
+
+
+
+
+val Epoch 60: 100%|█| 125/125 [00:12<00:00, 10.49it/s, loss=0.232, dice=tensor(6
+val Loss: 0.2219 Dice: 0.7774
+Epoch 61/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 61:  97%|▉| 121/125 [00:29<00:00,  4.21it/s, loss=0.178, dice=tensor
+
+
+
+
+
+
+val Epoch 61:  87%|▊| 109/125 [00:11<00:01, 10.32it/s, loss=0.29, dice=tensor(4.
+val Loss: 0.4539 Dice: 0.5156
+Epoch 62/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 62:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 62:  94%|▉| 118/125 [00:12<00:00, 10.35it/s, loss=0.323, dice=tensor(6
+val Loss: 0.3604 Dice: 0.7743
+Epoch 63/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 63:  96%|▉| 120/125 [00:29<00:01,  4.20it/s, loss=0.201, dice=tensor
+
+
+
+
+
+
+
+train Epoch 64:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2097 Dice: 0.7952
+Epoch 64/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 64:  99%|▉| 124/125 [00:30<00:00,  4.21it/s, loss=0.216, dice=tensor
+
+
+
+
+
+
+val Epoch 64:  93%|▉| 116/125 [00:11<00:00, 10.23it/s, loss=0.149, dice=tensor(6
+val Loss: 0.1761 Dice: 0.8242
+Epoch 65/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 65:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 65:  94%|▉| 118/125 [00:11<00:00, 10.32it/s, loss=0.255, dice=tensor(6
+val Loss: 0.2171 Dice: 0.7826
+Epoch 66/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 66:  97%|▉| 121/125 [00:29<00:00,  4.21it/s, loss=0.198, dice=tensor
+
+
+
+
+
+
+
+train Epoch 67:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.3411 Dice: 0.6435
+Epoch 67/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 67: 100%|█| 125/125 [00:30<00:00,  4.19it/s, loss=0.246, dice=tensor
+
+
+
+
+
+
+val Epoch 67:  95%|▉| 119/125 [00:12<00:00, 10.31it/s, loss=0.213, dice=tensor(6
+val Loss: 0.1700 Dice: 0.8301
+Epoch 68/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 68:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 68:  97%|▉| 121/125 [00:12<00:00, 10.47it/s, loss=0.891, dice=tensor(1
+val Loss: 0.8408 Dice: 0.1600
+Epoch 69/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 69:  95%|▉| 119/125 [00:28<00:01,  4.20it/s, loss=0.244, dice=tensor
+
+
+
+
+
+
+val Epoch 69:  85%|▊| 106/125 [00:10<00:01, 10.36it/s, loss=0.205, dice=tensor(6
+val Loss: 0.2359 Dice: 0.7645
+Epoch 70/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 70:  99%|▉| 124/125 [00:30<00:00,  4.21it/s, loss=0.213, dice=tensor
+
+
+
+
+
+
+val Epoch 70:  92%|▉| 115/125 [00:11<00:00, 10.34it/s, loss=0.158, dice=tensor(6
+val Loss: 0.2080 Dice: 0.7918
+Epoch 71/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 71:  95%|▉| 119/125 [00:28<00:01,  4.20it/s, loss=0.122, dice=tensor
+
+
+
+
+
+
+
+train Epoch 72:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2108 Dice: 0.7915
+Epoch 72/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 72:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.155, dice=tensor
+
+
+
+
+
+
+val Epoch 72:  93%|▉| 116/125 [00:11<00:00, 10.32it/s, loss=0.989, dice=tensor(0
+val Loss: 1.0023 Dice: 0.0060
+Epoch 73/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 73:  95%|▉| 119/125 [00:28<00:01,  4.20it/s, loss=0.137, dice=tensor
+
+
+
+
+
+
+
+train Epoch 74:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.7409 Dice: 0.2472
+Epoch 74/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 74:  98%|▉| 123/125 [00:30<00:00,  4.20it/s, loss=0.215, dice=tensor
+
+
+
+
+
+
+val Epoch 74:  92%|▉| 115/125 [00:11<00:00, 10.32it/s, loss=0.176, dice=tensor(6
+val Loss: 0.2231 Dice: 0.7771
+Epoch 75/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 75:  95%|▉| 119/125 [00:28<00:01,  4.20it/s, loss=0.196, dice=tensor
+
+
+
+
+
+
+
+val Epoch 75:  99%|▉| 124/125 [00:12<00:00, 10.53it/s, loss=0.869, dice=tensor(1
+val Loss: 0.9077 Dice: 0.1342
+Epoch 76/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 76:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.175, dice=tensor
+
+
+
+
+
+
+val Epoch 76:  91%|▉| 114/125 [00:11<00:01, 10.29it/s, loss=0.995, dice=tensor(0
+val Loss: 0.9941 Dice: 0.0228
+Epoch 77/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 77:  95%|▉| 119/125 [00:28<00:01,  4.20it/s, loss=0.146, dice=tensor
+
+
+
+
+
+
+
+val Epoch 77:  97%|▉| 121/125 [00:12<00:00, 10.45it/s, loss=0.728, dice=tensor(1
+val Loss: 0.7362 Dice: 0.2318
+Epoch 78/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 78:  97%|▉| 121/125 [00:29<00:00,  4.21it/s, loss=0.179, dice=tensor
+
+
+
+
+
+
+val Epoch 78:  88%|▉| 110/125 [00:11<00:01, 10.32it/s, loss=0.193, dice=tensor(6
+val Loss: 0.1711 Dice: 0.8292
+Epoch 79/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 79:  94%|▉| 117/125 [00:28<00:01,  4.18it/s, loss=0.135, dice=tensor
+
+
+
+
+
+
+
+val Epoch 79:  98%|▉| 123/125 [00:12<00:00, 10.53it/s, loss=0.19, dice=tensor(6.
+val Loss: 0.1684 Dice: 0.8306
+Epoch 80/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 80:  94%|▉| 118/125 [00:28<00:01,  4.18it/s, loss=0.196, dice=tensor
+
+
+
+
+
+
+
+val Epoch 80:  98%|▉| 123/125 [00:12<00:00, 10.46it/s, loss=0.284, dice=tensor(6
+val Loss: 0.2138 Dice: 0.7874
+Epoch 81/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 81:  98%|▉| 122/125 [00:29<00:00,  4.21it/s, loss=0.15, dice=tensor(
+
+
+
+
+
+
+val Epoch 81:  90%|▉| 113/125 [00:11<00:01, 10.31it/s, loss=0.228, dice=tensor(6
+val Loss: 0.2068 Dice: 0.7922
+Epoch 82/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 82:  94%|▉| 118/125 [00:28<00:01,  4.19it/s, loss=0.184, dice=tensor
+
+
+
+
+
+
+
+val Epoch 82:  99%|▉| 124/125 [00:12<00:00, 10.51it/s, loss=0.168, dice=tensor(6
+val Loss: 0.1872 Dice: 0.8129
+Epoch 83/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 83:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.196, dice=tensor
+
+
+
+
+
+
+
+train Epoch 84:   1%| | 1/125 [00:00<01:34,  1.31it/s, loss=0.177, dice=tensor(6
+val Loss: 0.1794 Dice: 0.8199
+Epoch 84/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 84:   0%| | 0/125 [00:00<?, ?it/s, loss=0.263, dice=tensor(5.9241, dev
+
+
+
+
+
+
+val Epoch 84: 100%|█| 125/125 [00:12<00:00, 10.55it/s, loss=0.308, dice=tensor(5
+val Loss: 0.2809 Dice: 0.7234
+Epoch 85/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 85:  98%|▉| 123/125 [00:29<00:00,  4.22it/s, loss=0.157, dice=tensor
+
+
+
+
+
+
+
+train Epoch 86:   1%| | 1/125 [00:00<01:34,  1.31it/s, loss=0.185, dice=tensor(6
+val Loss: 0.4232 Dice: 0.5819
+Epoch 86/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 86:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 86:  96%|▉| 120/125 [00:12<00:00, 10.42it/s, loss=0.158, dice=tensor(6
+val Loss: 0.1683 Dice: 0.8307
+Epoch 87/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 87:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 87:  98%|▉| 122/125 [00:12<00:00, 10.45it/s, loss=0.271, dice=tensor(6
+val Loss: 0.2209 Dice: 0.7797
+Epoch 88/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 88:  98%|▉| 122/125 [00:29<00:00,  4.21it/s, loss=0.158, dice=tensor
+
+
+
+
+
+
+
+train Epoch 89:   0%| | 0/125 [00:00<?, ?it/s, loss=0.151, dice=tensor(6.8021, d
+val Loss: 1.0155 Dice: 0.0005
+Epoch 89/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 89:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 89:  97%|▉| 121/125 [00:12<00:00, 10.45it/s, loss=0.226, dice=tensor(6
+val Loss: 0.2186 Dice: 0.7822
+Epoch 90/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 90:  98%|▉| 122/125 [00:29<00:00,  4.21it/s, loss=0.18, dice=tensor(
+
+
+
+
+
+
+
+val Epoch 90:  87%|▊| 109/125 [00:11<00:01, 10.30it/s, loss=0.197, dice=tensor(6
+val Loss: 0.1681 Dice: 0.8306
+Epoch 91/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 91:  98%|▉| 122/125 [00:29<00:00,  4.21it/s, loss=0.151, dice=tensor
+
+
+
+
+
+
+
+train Epoch 92:   1%| | 1/125 [00:00<01:33,  1.33it/s, loss=0.155, dice=tensor(6
+val Loss: 0.3211 Dice: 0.6729
+Epoch 92/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 92:   0%|                                     | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 92:  98%|▉| 123/125 [00:12<00:00, 10.47it/s, loss=0.147, dice=tensor(6
+
+train Epoch 93:   2%| | 2/125 [00:00<00:54,  2.27it/s, loss=0.247, dice=tensor(6
+Epoch 93/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 93:   0%| | 0/125 [00:00<?, ?it/s, loss=0.207, dice=tensor(6.3812, dev
+
+
+
+
+
+
+val Epoch 93:  99%|▉| 124/125 [00:12<00:00, 10.50it/s, loss=0.174, dice=tensor(6
+val Loss: 0.1951 Dice: 0.8051
+Epoch 94/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 94:  97%|▉| 121/125 [00:29<00:00,  4.19it/s, loss=0.162, dice=tensor
+
+
+
+
+
+
+
+train Epoch 95:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1648 Dice: 0.8341
+Epoch 95/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 95:  99%|▉| 124/125 [00:30<00:00,  4.20it/s, loss=0.153, dice=tensor
+
+
+
+
+
+
+val Epoch 95:  94%|▉| 117/125 [00:11<00:00, 10.32it/s, loss=0.237, dice=tensor(6
+val Loss: 0.2071 Dice: 0.7939
+Epoch 96/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 96:   2%| | 2/125 [00:00<00:35,  3.51it/s, loss=0.293, dice=tensor(5.3
+
+
+
+
+
+
+train Epoch 97:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.3293 Dice: 0.6808
+Epoch 97/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 97:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.133, dice=tensor
+
+
+
+
+
+
+val Epoch 97:  92%|▉| 115/125 [00:11<00:00, 10.31it/s, loss=0.534, dice=tensor(4
+val Loss: 0.4562 Dice: 0.5180
+Epoch 98/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 98:   2%| | 2/125 [00:00<00:33,  3.67it/s, loss=0.253, dice=tensor(6.1
+
+
+
+
+
+
+train Epoch 99:   0%|                                   | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2598 Dice: 0.7425
+Epoch 99/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 99:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.177, dice=tensor
+
+
+
+
+
+
+
+train Epoch 100:   1%| | 1/125 [00:01<01:35,  1.29it/s, loss=0.195, dice=tensor(
+val Loss: 0.3161 Dice: 0.7558
+Epoch 100/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 100:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 100:  98%|▉| 123/125 [00:12<00:00, 10.51it/s, loss=0.788, dice=tensor(
+val Loss: 0.7581 Dice: 0.2141
+Epoch 101/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 101:  98%|▉| 122/125 [00:29<00:00,  4.21it/s, loss=0.186, dice=tenso
+
+
+
+
+
+
+
+train Epoch 102:   0%| | 0/125 [00:00<?, ?it/s, loss=0.144, dice=tensor(6.9086,
+val Loss: 0.2834 Dice: 0.7155
+Epoch 102/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 102:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 102:  97%|▉| 121/125 [00:12<00:00, 10.43it/s, loss=0.182, dice=tensor(
+val Loss: 0.1805 Dice: 0.8214
+Epoch 103/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 103:   2%| | 2/125 [00:00<00:34,  3.56it/s, loss=0.856, dice=tensor(1.
+
+
+
+
+
+
+train Epoch 104:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.7641 Dice: 0.1759
+Epoch 104/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 104:  99%|▉| 124/125 [00:30<00:00,  4.22it/s, loss=0.141, dice=tenso
+
+
+
+
+
+
+val Epoch 104:  92%|▉| 115/125 [00:11<00:00, 10.30it/s, loss=0.189, dice=tensor(
+val Loss: 0.2077 Dice: 0.7937
+Epoch 105/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 105:   1%| | 1/125 [00:00<01:09,  1.79it/s, loss=0.271, dice=tensor(5.
+
+
+
+
+
+
+train Epoch 106:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1919 Dice: 0.8091
+Epoch 106/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 106:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.202, dice=tenso
+
+
+
+
+
+
+
+train Epoch 107:   1%| | 1/125 [00:00<01:35,  1.29it/s, loss=0.164, dice=tensor(
+val Loss: 0.2633 Dice: 0.7399
+Epoch 107/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 107:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 107:  98%|▉| 122/125 [00:12<00:00, 10.42it/s, loss=0.208, dice=tensor(
+val Loss: 0.2076 Dice: 0.8050
+Epoch 108/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 108:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.157, dice=tenso
+
+
+
+
+
+
+
+train Epoch 109:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2470 Dice: 0.7556
+Epoch 109/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 109:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 109:  95%|▉| 119/125 [00:12<00:00, 10.36it/s, loss=0.292, dice=tensor(
+val Loss: 0.2068 Dice: 0.7931
+Epoch 110/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 110:   3%| | 4/125 [00:00<00:22,  5.30it/s, loss=0.147, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 111:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1626 Dice: 0.8368
+Epoch 111/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 111:  98%|▉| 122/125 [00:29<00:00,  4.21it/s, loss=0.144, dice=tenso
+
+
+
+
+
+
+val Epoch 111:  89%|▉| 111/125 [00:11<00:01, 10.28it/s, loss=0.189, dice=tensor(
+val Loss: 0.2158 Dice: 0.7872
+Epoch 112/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 112:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 112:  96%|▉| 120/125 [00:12<00:00, 10.38it/s, loss=0.319, dice=tensor(
+val Loss: 0.3283 Dice: 0.6843
+Epoch 113/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 113:  97%|▉| 121/125 [00:29<00:00,  4.20it/s, loss=0.179, dice=tenso
+
+
+
+
+
+
+
+val Epoch 113:  86%|▊| 108/125 [00:11<00:01, 10.28it/s, loss=0.136, dice=tensor(
+val Loss: 0.1547 Dice: 0.8451
+Epoch 114/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 114:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.179, dice=tenso
+
+
+
+
+
+
+
+val Epoch 114:  88%|▉| 110/125 [00:11<00:01, 10.28it/s, loss=0.141, dice=tensor(
+val Loss: 0.1497 Dice: 0.8489
+Epoch 115/199
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 115:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.165, dice=tenso
+
+
+
+
+
+
+
+train Epoch 116:   1%| | 1/125 [00:00<01:29,  1.39it/s, loss=0.132, dice=tensor(
+val Loss: 0.2831 Dice: 0.7225
+Epoch 116/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 116:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 116:  96%|▉| 120/125 [00:12<00:00, 10.36it/s, loss=0.317, dice=tensor(
+val Loss: 0.2819 Dice: 0.7229
+Epoch 117/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 117:  97%|▉| 121/125 [00:29<00:00,  4.16it/s, loss=0.2, dice=tensor(
+
+
+
+
+
+
+
+train Epoch 118:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1750 Dice: 0.8238
+Epoch 118/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 118: 100%|█| 125/125 [00:30<00:00,  4.21it/s, loss=0.159, dice=tenso
+
+
+
+
+
+
+val Epoch 118:  94%|▉| 117/125 [00:12<00:00, 10.28it/s, loss=0.533, dice=tensor(
+val Loss: 0.5103 Dice: 0.4577
+Epoch 119/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 119:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 119:  97%|▉| 121/125 [00:12<00:00, 10.38it/s, loss=0.334, dice=tensor(
+val Loss: 0.3589 Dice: 0.6500
+Epoch 120/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 120:  97%|▉| 121/125 [00:29<00:00,  4.20it/s, loss=0.158, dice=tenso
+
+
+
+
+
+
+
+train Epoch 121:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2892 Dice: 0.7195
+Epoch 121/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 121:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 121:  94%|▉| 118/125 [00:12<00:00, 10.32it/s, loss=0.153, dice=tensor(
+val Loss: 0.1655 Dice: 0.8328
+Epoch 122/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 122:  96%|▉| 120/125 [00:29<00:01,  4.19it/s, loss=0.131, dice=tenso
+
+
+
+
+
+
+
+train Epoch 123:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 1.0152 Dice: 0.0007
+Epoch 123/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 123:  99%|▉| 124/125 [00:30<00:00,  4.20it/s, loss=0.168, dice=tenso
+
+
+
+
+
+
+val Epoch 123:  91%|▉| 114/125 [00:11<00:01, 10.26it/s, loss=0.134, dice=tensor(
+val Loss: 0.1756 Dice: 0.8253
+Epoch 124/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 124:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 124:  98%|▉| 123/125 [00:12<00:00, 10.44it/s, loss=0.237, dice=tensor(
+val Loss: 0.2079 Dice: 0.7956
+Epoch 125/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 125:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.143, dice=tenso
+
+
+
+
+
+
+
+train Epoch 126:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2316 Dice: 0.7708
+Epoch 126/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 126: 100%|█| 125/125 [00:30<00:00,  4.20it/s, loss=0.192, dice=tenso
+
+
+
+
+
+
+val Epoch 126:  93%|▉| 116/125 [00:11<00:00, 10.21it/s, loss=0.123, dice=tensor(
+
+train Epoch 127:   0%|                                  | 0/125 [00:00<?, ?it/s]
+Epoch 127/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 127:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 127:  96%|▉| 120/125 [00:12<00:00, 10.40it/s, loss=0.14, dice=tensor(6
+val Loss: 0.1509 Dice: 0.8477
+Epoch 128/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 128:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+train Epoch 129:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2300 Dice: 0.7721
+Epoch 129/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 129:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.144, dice=tenso
+
+
+
+
+
+
+val Epoch 129:  91%|▉| 114/125 [00:11<00:01, 10.31it/s, loss=0.157, dice=tensor(
+val Loss: 0.1387 Dice: 0.8603
+Epoch 130/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 130:   1%| | 1/125 [00:00<01:12,  1.71it/s, loss=0.197, dice=tensor(6.
+
+
+
+
+
+
+val Epoch 130:  98%|▉| 123/125 [00:12<00:00, 10.48it/s, loss=0.236, dice=tensor(
+val Loss: 0.1863 Dice: 0.8145
+Epoch 131/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 131:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.193, dice=tenso
+
+
+
+
+
+
+
+train Epoch 132:   1%| | 1/125 [00:00<01:33,  1.33it/s, loss=0.118, dice=tensor(
+val Loss: 1.0145 Dice: 0.0011
+Epoch 132/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 132:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 132:  98%|▉| 123/125 [00:12<00:00, 10.43it/s, loss=0.466, dice=tensor(
+val Loss: 0.5492 Dice: 0.4115
+Epoch 133/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 133:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.137, dice=tenso
+
+
+
+
+
+
+
+train Epoch 134:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1794 Dice: 0.8209
+Epoch 134/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 134:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 134:  90%|▉| 113/125 [00:11<00:01, 10.34it/s, loss=0.327, dice=tensor(
+val Loss: 0.2936 Dice: 0.7135
+Epoch 135/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 135:   5%| | 6/125 [00:01<00:14,  8.25it/s, loss=0.165, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 136:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1676 Dice: 0.8325
+Epoch 136/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 136:  98%|▉| 123/125 [00:30<00:00,  4.20it/s, loss=0.174, dice=tenso
+
+
+
+
+
+
+val Epoch 136:  91%|▉| 114/125 [00:11<00:01, 10.29it/s, loss=0.728, dice=tensor(
+val Loss: 0.6790 Dice: 0.3249
+Epoch 137/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 137:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 137:  99%|▉| 124/125 [00:12<00:00, 10.47it/s, loss=0.221, dice=tensor(
+val Loss: 0.2920 Dice: 0.7120
+Epoch 138/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 138:  98%|▉| 122/125 [00:29<00:00,  4.20it/s, loss=0.134, dice=tenso
+
+
+
+
+
+
+
+train Epoch 139:   0%| | 0/125 [00:00<?, ?it/s, loss=0.12, dice=tensor(7.0279, d
+val Loss: 0.1709 Dice: 0.8293
+Epoch 139/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 139:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 139:  95%|▉| 119/125 [00:12<00:00, 10.31it/s, loss=0.255, dice=tensor(
+val Loss: 0.2685 Dice: 0.7347
+Epoch 140/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 140:  97%|▉| 121/125 [00:29<00:00,  4.19it/s, loss=0.126, dice=tenso
+
+
+
+
+
+
+
+train Epoch 141:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2600 Dice: 0.7478
+Epoch 141/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 141:  99%|▉| 124/125 [00:30<00:00,  4.20it/s, loss=0.17, dice=tensor
+
+
+
+
+
+
+val Epoch 141:  91%|▉| 114/125 [00:11<00:01, 10.21it/s, loss=0.317, dice=tensor(
+val Loss: 0.3153 Dice: 0.6888
+Epoch 142/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 142:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 142:  98%|▉| 123/125 [00:12<00:00, 10.38it/s, loss=0.178, dice=tensor(
+val Loss: 0.1929 Dice: 0.8080
+Epoch 143/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 143:  98%|▉| 122/125 [00:29<00:00,  4.19it/s, loss=0.174, dice=tenso
+
+
+
+
+
+
+
+val Epoch 143:  97%|▉| 121/125 [00:12<00:00, 10.40it/s, loss=0.241, dice=tensor(
+val Loss: 0.2707 Dice: 0.7309
+Epoch 144/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 144:  93%|▉| 116/125 [00:28<00:02,  4.17it/s, loss=0.162, dice=tenso
+train Loss: 0.1584 Dice: 0.8413
+
+
+
+
+
+val Epoch 144:  93%|▉| 116/125 [00:12<00:00, 10.20it/s, loss=0.163, dice=tensor(
+val Loss: 0.1589 Dice: 0.8403
+Epoch 145/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 145:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 145:  95%|▉| 119/125 [00:12<00:00, 10.30it/s, loss=0.339, dice=tensor(
+val Loss: 0.3516 Dice: 0.6253
+Epoch 146/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 146:  96%|▉| 120/125 [00:29<00:01,  4.19it/s, loss=0.196, dice=tenso
+
+
+
+
+
+
+
+train Epoch 147:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.3034 Dice: 0.7302
+Epoch 147/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 147:  99%|▉| 124/125 [00:30<00:00,  4.20it/s, loss=0.158, dice=tenso
+
+
+
+
+
+
+val Epoch 147:  92%|▉| 115/125 [00:11<00:00, 10.25it/s, loss=0.351, dice=tensor(
+val Loss: 0.3431 Dice: 0.6680
+Epoch 148/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 148:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 148:  98%|▉| 123/125 [00:12<00:00, 10.39it/s, loss=0.239, dice=tensor(
+val Loss: 0.2108 Dice: 0.7963
+Epoch 149/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 149:   6%| | 7/125 [00:01<00:15,  7.49it/s, loss=0.209, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 150:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2202 Dice: 0.7806
+Epoch 150/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 150: 100%|█| 125/125 [00:30<00:00,  4.20it/s, loss=0.144, dice=tenso
+
+
+
+
+
+
+
+train Epoch 151:   2%| | 2/125 [00:00<00:55,  2.22it/s, loss=0.147, dice=tensor(
+val Loss: 0.1380 Dice: 0.8608
+Epoch 151/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 151:   2%| | 2/125 [00:00<00:35,  3.44it/s, loss=0.184, dice=tensor(6.
+
+
+
+
+
+
+val Epoch 151:  99%|▉| 124/125 [00:12<00:00, 10.45it/s, loss=0.191, dice=tensor(
+val Loss: 0.1733 Dice: 0.8253
+Epoch 152/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 152:   7%| | 9/125 [00:01<00:13,  8.86it/s, loss=0.668, dice=tensor(1.
+
+
+
+
+
+
+train Epoch 153:   1%| | 1/125 [00:00<01:34,  1.31it/s, loss=0.167, dice=tensor(
+val Loss: 0.7173 Dice: 0.2611
+Epoch 153/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 153:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+train Epoch 154:   2%| | 2/125 [00:01<00:57,  2.14it/s, loss=0.121, dice=tensor(
+val Loss: 0.2957 Dice: 0.6849
+Epoch 154/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 154:   1%| | 1/125 [00:00<01:03,  1.95it/s, loss=0.963, dice=tensor(0.
+
+
+
+
+
+
+val Epoch 154:  99%|▉| 124/125 [00:12<00:00, 10.45it/s, loss=0.971, dice=tensor(
+val Loss: 0.9875 Dice: 0.0063
+Epoch 155/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 155:  98%|▉| 122/125 [00:29<00:00,  4.19it/s, loss=0.165, dice=tenso
+
+
+
+
+
+
+
+train Epoch 156:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1269 Dice: 0.8721
+Epoch 156/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 156:  98%|▉| 123/125 [00:30<00:00,  4.21it/s, loss=0.117, dice=tenso
+
+
+
+
+
+
+
+train Epoch 157:   2%| | 2/125 [00:01<00:56,  2.18it/s, loss=0.126, dice=tensor(
+val Loss: 0.2459 Dice: 0.7577
+Epoch 157/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 157:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 157:  99%|▉| 124/125 [00:12<00:00, 10.51it/s, loss=0.165, dice=tensor(
+val Loss: 0.1629 Dice: 0.8360
+Epoch 158/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 158:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.145, dice=tenso
+
+
+
+
+
+
+
+train Epoch 159:   1%| | 1/125 [00:00<01:31,  1.36it/s, loss=0.132, dice=tensor(
+val Loss: 0.1882 Dice: 0.8121
+Epoch 159/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 159:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 159:  98%|▉| 123/125 [00:12<00:00, 10.48it/s, loss=0.226, dice=tensor(
+val Loss: 0.3050 Dice: 0.6725
+Epoch 160/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 160:   6%| | 7/125 [00:01<00:14,  7.93it/s, loss=0.314, dice=tensor(5.
+
+
+
+
+
+
+train Epoch 161:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2671 Dice: 0.7398
+Epoch 161/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 161:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+train Epoch 162:   3%| | 4/125 [00:01<00:37,  3.24it/s, loss=0.181, dice=tensor(
+val Loss: 0.1504 Dice: 0.8482
+Epoch 162/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 162:   2%| | 2/125 [00:00<00:35,  3.44it/s, loss=0.171, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 163:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1586 Dice: 0.8407
+Epoch 163/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 163:  99%|▉| 124/125 [00:30<00:00,  4.21it/s, loss=0.136, dice=tenso
+
+
+
+
+
+
+
+train Epoch 164:   2%| | 2/125 [00:00<00:53,  2.29it/s, loss=0.134, dice=tensor(
+val Loss: 0.2157 Dice: 0.7858
+Epoch 164/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 164:   2%| | 3/125 [00:00<00:24,  4.94it/s, loss=0.119, dice=tensor(7.
+
+
+
+
+
+
+train Epoch 165:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1383 Dice: 0.8608
+Epoch 165/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 165:  98%|▉| 123/125 [00:30<00:00,  4.21it/s, loss=0.155, dice=tenso
+
+
+
+
+
+
+
+train Epoch 166:   2%| | 2/125 [00:00<00:54,  2.25it/s, loss=0.173, dice=tensor(
+val Loss: 0.1407 Dice: 0.8586
+Epoch 166/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 166:   1%| | 1/125 [00:00<01:05,  1.89it/s, loss=0.354, dice=tensor(5.
+
+
+
+
+
+
+train Epoch 167:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2817 Dice: 0.7002
+Epoch 167/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 167:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.11, dice=tensor
+
+
+
+
+
+
+
+train Epoch 168:   2%| | 2/125 [00:00<00:55,  2.20it/s, loss=0.162, dice=tensor(
+val Loss: 0.3145 Dice: 0.6801
+Epoch 168/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 168:   1%| | 1/125 [00:00<01:07,  1.83it/s, loss=0.44, dice=tensor(4.4
+
+
+
+
+
+
+
+train Epoch 169:   5%| | 6/125 [00:01<00:31,  3.77it/s, loss=0.115, dice=tensor(
+val Loss: 0.3361 Dice: 0.6633
+Epoch 169/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 169:  95%|▉| 119/125 [00:28<00:01,  4.20it/s, loss=0.117, dice=tenso
+
+
+
+
+
+
+
+train Epoch 170:   1%| | 1/125 [00:00<01:34,  1.31it/s, loss=0.172, dice=tensor(
+val Loss: 0.1721 Dice: 0.8296
+Epoch 170/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 170:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 170:  98%|▉| 123/125 [00:12<00:00, 10.45it/s, loss=0.155, dice=tensor(
+val Loss: 0.1369 Dice: 0.8629
+Epoch 171/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 171:   4%| | 5/125 [00:00<00:17,  6.90it/s, loss=0.124, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 172:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1358 Dice: 0.8629
+Epoch 172/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 172:  99%|▉| 124/125 [00:30<00:00,  4.21it/s, loss=0.143, dice=tenso
+
+
+
+
+
+
+
+train Epoch 173:   2%| | 3/125 [00:01<00:43,  2.80it/s, loss=0.196, dice=tensor(
+val Loss: 0.2984 Dice: 0.7168
+Epoch 173/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 173:   2%| | 3/125 [00:00<00:23,  5.19it/s, loss=0.329, dice=tensor(5.
+
+
+
+
+
+
+train Epoch 174:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2862 Dice: 0.7170
+Epoch 174/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 174:  99%|▉| 124/125 [00:30<00:00,  4.21it/s, loss=0.186, dice=tenso
+
+
+
+
+
+
+
+train Epoch 175:   2%| | 2/125 [00:00<00:54,  2.26it/s, loss=0.182, dice=tensor(
+val Loss: 0.1787 Dice: 0.8168
+Epoch 175/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 175:   2%| | 2/125 [00:00<00:36,  3.34it/s, loss=0.853, dice=tensor(1.
+
+
+
+
+
+
+train Epoch 176:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.8850 Dice: 0.0986
+Epoch 176/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 176:  98%|▉| 123/125 [00:30<00:00,  4.20it/s, loss=0.154, dice=tenso
+
+
+
+
+
+
+
+train Epoch 177:   2%| | 2/125 [00:01<00:57,  2.15it/s, loss=0.113, dice=tensor(
+val Loss: 0.3531 Dice: 0.6566
+Epoch 177/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 177:   1%| | 1/125 [00:00<00:54,  2.29it/s, loss=0.256, dice=tensor(5.
+
+
+
+
+
+
+train Epoch 178:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2286 Dice: 0.7729
+Epoch 178/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 178:   7%| | 9/125 [00:01<00:13,  8.77it/s, loss=0.231, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 179:   1%| | 1/125 [00:00<01:24,  1.47it/s, loss=0.14, dice=tensor(6
+val Loss: 0.2059 Dice: 0.7946
+Epoch 179/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 179:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 179:  94%|▉| 117/125 [00:11<00:00, 10.27it/s, loss=0.382, dice=tensor(
+val Loss: 0.5217 Dice: 0.4264
+Epoch 180/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 180:   2%| | 2/125 [00:00<00:39,  3.09it/s, loss=0.133, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 181:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1745 Dice: 0.8257
+Epoch 181/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 181:  98%|▉| 123/125 [00:30<00:00,  4.21it/s, loss=0.158, dice=tenso
+
+
+
+
+
+
+
+train Epoch 182:   1%| | 1/125 [00:00<01:36,  1.28it/s, loss=0.154, dice=tensor(
+val Loss: 0.2173 Dice: 0.7843
+Epoch 182/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 182:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 182:  98%|▉| 123/125 [00:12<00:00, 10.46it/s, loss=0.208, dice=tensor(
+val Loss: 0.2389 Dice: 0.7658
+Epoch 183/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 183:   7%| | 9/125 [00:01<00:13,  8.90it/s, loss=0.28, dice=tensor(5.9
+
+
+
+
+
+
+train Epoch 184:   0%| | 0/125 [00:00<?, ?it/s, loss=0.143, dice=tensor(6.8848,
+val Loss: 0.2489 Dice: 0.7562
+Epoch 184/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 184:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 184:  96%|▉| 120/125 [00:12<00:00, 10.36it/s, loss=0.124, dice=tensor(
+val Loss: 0.1421 Dice: 0.8567
+Epoch 185/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 185:   5%| | 6/125 [00:01<00:16,  7.35it/s, loss=0.156, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 186:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1918 Dice: 0.8081
+Epoch 186/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 186:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+train Epoch 187:   3%| | 4/125 [00:01<00:37,  3.26it/s, loss=0.139, dice=tensor(
+val Loss: 0.1509 Dice: 0.8480
+Epoch 187/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 187:   4%| | 5/125 [00:01<00:17,  7.04it/s, loss=0.15, dice=tensor(6.6
+
+
+
+
+
+
+val Epoch 187:  98%|▉| 123/125 [00:12<00:00, 10.47it/s, loss=0.126, dice=tensor(
+val Loss: 0.1602 Dice: 0.8380
+Epoch 188/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 188:  98%|▉| 123/125 [00:29<00:00,  4.21it/s, loss=0.118, dice=tenso
+
+
+
+
+
+
+
+train Epoch 189:   1%| | 1/125 [00:00<01:33,  1.32it/s, loss=0.187, dice=tensor(
+val Loss: 0.2605 Dice: 0.7424
+Epoch 189/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 189:   0%|                                    | 0/125 [00:00<?, ?it/s]
+
+
+
+
+
+
+val Epoch 189:  97%|▉| 121/125 [00:12<00:00, 10.40it/s, loss=1.02, dice=tensor(0
+val Loss: 1.0161 Dice: 0.0001
+Epoch 190/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 190:   4%| | 5/125 [00:01<00:19,  6.05it/s, loss=0.189, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 191:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1753 Dice: 0.8224
+Epoch 191/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 191: 100%|█| 125/125 [00:30<00:00,  4.21it/s, loss=0.159, dice=tenso
+
+
+
+
+
+
+
+train Epoch 192:   2%| | 3/125 [00:01<00:43,  2.79it/s, loss=0.169, dice=tensor(
+val Loss: 0.1338 Dice: 0.8653
+Epoch 192/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 192:   2%| | 3/125 [00:00<00:24,  4.99it/s, loss=0.283, dice=tensor(6.
+
+
+
+
+
+
+train Epoch 193:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.2063 Dice: 0.7952
+Epoch 193/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 193:  99%|▉| 124/125 [00:30<00:00,  4.21it/s, loss=0.123, dice=tenso
+
+
+
+
+
+
+
+train Epoch 194:   2%| | 3/125 [00:01<00:43,  2.83it/s, loss=0.175, dice=tensor(
+val Loss: 0.1619 Dice: 0.8370
+Epoch 194/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 194:   2%| | 3/125 [00:00<00:24,  4.98it/s, loss=0.15, dice=tensor(6.7
+
+
+
+
+
+
+train Epoch 195:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.1380 Dice: 0.8608
+Epoch 195/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 195:   9%| | 11/125 [00:01<00:12,  9.34it/s, loss=0.2, dice=tensor(6.1
+
+
+
+
+
+
+train Epoch 196:   2%| | 2/125 [00:00<00:52,  2.34it/s, loss=0.114, dice=tensor(
+val Loss: 0.2288 Dice: 0.7756
+Epoch 196/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 196:   1%| | 1/125 [00:00<01:08,  1.80it/s, loss=0.169, dice=tensor(6.
+
+
+
+
+
+
+val Epoch 196:  94%|▉| 118/125 [00:12<00:00, 10.30it/s, loss=0.133, dice=tensor(
+val Loss: 0.1505 Dice: 0.8491
+Epoch 197/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 197:   3%| | 4/125 [00:00<00:20,  5.85it/s, loss=0.426, dice=tensor(4.
+
+
+
+
+
+
+train Epoch 198:   0%|                                  | 0/125 [00:00<?, ?it/s]
+val Loss: 0.4893 Dice: 0.5455
+Epoch 198/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train Epoch 198:  99%|▉| 124/125 [00:30<00:00,  4.21it/s, loss=0.146, dice=tenso
+
+
+
+
+
+
+
+train Epoch 199:   2%| | 2/125 [00:00<00:55,  2.22it/s, loss=0.136, dice=tensor(
+val Loss: 0.2842 Dice: 0.7203
+Epoch 199/199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val Epoch 199:   2%| | 2/125 [00:00<00:35,  3.44it/s, loss=0.119, dice=tensor(6.
+
+
+
+
+
+
+val Epoch 199:  84%|▊| 105/125 [00:10<00:01, 10.27it/s, loss=0.124, dice=tensor(
+val Loss: 0.1260 Dice: 0.8730
+Best val loss: 0.126014, best val dice: 0.872989
