@@ -1,0 +1,12 @@
+*.pyc
+*.cpython-38.pyc
+*.pth
+*.gz
+*.zip
+*.png
+*.jpg
+*.JPG
+*.tif
+*.bmp
+*.out
+__pycache__
