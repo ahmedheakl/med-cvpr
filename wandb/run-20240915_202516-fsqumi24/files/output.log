@@ -1,0 +1,53 @@
+Training parameters:
+----------
+number of trainable parameters:  1034496
+batch size:  32
+num epochs:  1000
+Epoch 0/999
+----------
+Traceback (most recent call last):
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/driver_scratchpad.py", line 382, in <module>
+    main_train(data_config, model_config, args.pretrained_path, args.save_path, args.training_strategy, device=args.device)
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/driver_scratchpad.py", line 361, in main_train
+    model = train_dl(model, dataset_dict, dataset_sizes, criterion, optimizer, exp_lr_scheduler, save_path, num_epochs=training_params['num_epochs'], bs=training_params['batch_size'], device=device, retain_graph=retain_graph, neg2pos_ratio=data_config['data']['negative_to_positive_ratio'], reg_multiplier=model_config['training']['reg_multiplier'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/train.py", line 182, in train_dl
+    outputs, reg_loss = model(inputs, text)
+                        ^^^^^^^^^^^^^^^^^^^
+  File "/home/sarim.hashmi/anaconda3/envs/AI702/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sarim.hashmi/anaconda3/envs/AI702/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/model.py", line 162, in forward
+    image_embeddings, reg_loss = self.sam_encoder(x_img)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sarim.hashmi/anaconda3/envs/AI702/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sarim.hashmi/anaconda3/envs/AI702/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/prompt_adapted_segment_anything/modeling/image_encoder.py", line 178, in forward
+    x, loss = blk(x)
+              ^^^^^^
+  File "/home/sarim.hashmi/anaconda3/envs/AI702/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sarim.hashmi/anaconda3/envs/AI702/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/prompt_adapted_segment_anything/modeling/image_encoder.py", line 281, in forward
+    x, reg_loss1 = self.attn(x)
+                   ^^^^^^^^^^^^
+  File "/home/sarim.hashmi/anaconda3/envs/AI702/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sarim.hashmi/anaconda3/envs/AI702/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/l/users/sarim.hashmi/for_the_little_interns/SVD_vs_ortho/arcade/SVD/prompt_adapted_segment_anything/modeling/image_encoder.py", line 345, in forward
+    attn = (q * self.scale) @ k.transpose(-2, -1)
+           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.50 GiB. GPU 0 has a total capacity of 23.65 GiB of which 1.25 GiB is free. Including non-PyTorch memory, this process has 21.14 GiB memory in use. Of the allocated memory 20.60 GiB is allocated by PyTorch, and 61.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

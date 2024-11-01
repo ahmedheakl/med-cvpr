@@ -1,0 +1,2343 @@
+
+train Epoch 0:   0%|          | 0/4 [00:00<?, ?it/s]
+Training parameters:
+----------
+number of trainable parameters:  7763041
+batch size:  5
+num epochs:  500
+Epoch 0/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 1/499
+
+train Epoch 1:  25%|██▌       | 1/4 [00:00<00:01,  1.76it/s, loss=0.831, dice=tensor(0.8639, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 2/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 3/499
+
+train Epoch 3:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 4/499
+
+train Epoch 4:  75%|███████▌  | 3/4 [00:00<00:00,  5.03it/s, loss=0.834, dice=tensor(0.7733, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 5/499
+----------
+train Loss: 0.8430 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 6/499
+
+train Epoch 6:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 7/499
+
+train Epoch 7:  75%|███████▌  | 3/4 [00:00<00:00,  4.46it/s, loss=0.85, dice=tensor(0.7435, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 8/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 9/499
+
+train Epoch 9:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 10/499
+
+train Epoch 10:  25%|██▌       | 1/4 [00:00<00:01,  1.71it/s, loss=0.833, dice=tensor(0.8254, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 11/499
+----------
+
+val Epoch 11:  50%|█████     | 1/2 [00:00<00:00,  2.93it/s, loss=0.885, dice=tensor(0.5740, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 12/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 13/499
+
+
+val Epoch 14:  50%|█████     | 1/2 [00:00<00:00,  2.85it/s, loss=0.869, dice=tensor(0.6543, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 14/499
+----------
+
+train Epoch 16:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 15/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 16/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 17/499
+----------
+
+val Epoch 17:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 18/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 19/499
+
+train Epoch 19:  25%|██▌       | 1/4 [00:00<00:01,  1.77it/s, loss=0.841, dice=tensor(0.7865, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 20/499
+----------
+
+val Epoch 20:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 21/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 22/499
+
+train Epoch 22:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 23/499
+----------
+
+val Epoch 23:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 24/499
+----------
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 25/499
+
+train Epoch 25:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 26/499
+----------
+
+val Epoch 26:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 27/499
+----------
+train Loss: 0.8429 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 28/499
+
+train Epoch 28:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8739 Dice: 0.1258
+Epoch 29/499
+----------
+
+val Epoch 29:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 30/499
+----------
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 31/499
+
+train Epoch 31:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 32/499
+----------
+
+val Epoch 32:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 33/499
+----------
+train Loss: 0.8425 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 34/499
+
+train Epoch 34:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 35/499
+----------
+
+val Epoch 35:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 36/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 37/499
+
+train Epoch 37:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 38/499
+----------
+
+val Epoch 38:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 39/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 40/499
+
+train Epoch 40:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 41/499
+----------
+
+val Epoch 41:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 42/499
+----------
+train Loss: 0.8429 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 43/499
+
+train Epoch 43:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 44/499
+----------
+
+
+train Epoch 46:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 45/499
+----------
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 46/499
+
+val Epoch 47:  50%|█████     | 1/2 [00:00<00:00,  2.99it/s, loss=0.864, dice=tensor(0.6780, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 47/499
+----------
+
+train Epoch 49:  25%|██▌       | 1/4 [00:00<00:01,  2.08it/s, loss=0.853, dice=tensor(0.7064, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 48/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 49/499
+
+val Epoch 50:  50%|█████     | 1/2 [00:00<00:00,  2.60it/s, loss=0.856, dice=tensor(0.6288, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 50/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 51/499
+----------
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 52/499
+
+train Epoch 52:  25%|██▌       | 1/4 [00:00<00:01,  1.72it/s, loss=0.821, dice=tensor(0.8055, device='cuda:0')]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 53/499
+----------
+
+train Epoch 54:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 54/499
+----------
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 55/499
+
+
+train Epoch 57:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 56/499
+----------
+
+train Epoch 58:  75%|███████▌  | 3/4 [00:00<00:00,  4.86it/s, loss=0.865, dice=tensor(0.7833, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 57/499
+----------
+train Loss: 0.8432 Dice: 0.1561
+val Loss: 0.8739 Dice: 0.1258
+Epoch 58/499
+
+val Epoch 59:  50%|█████     | 1/2 [00:00<00:00,  3.06it/s, loss=0.877, dice=tensor(0.6288, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 59/499
+----------
+
+train Epoch 61:  25%|██▌       | 1/4 [00:00<00:01,  2.06it/s, loss=0.866, dice=tensor(0.7335, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 60/499
+----------
+train Loss: 0.8426 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 61/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 62/499
+----------
+
+train Epoch 63:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 63/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 64/499
+----------
+
+
+train Epoch 66:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 65/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 66/499
+
+train Epoch 67:  75%|███████▌  | 3/4 [00:00<00:00,  5.17it/s, loss=0.85, dice=tensor(0.8501, device='cuda:0')]
+train Loss: 0.8429 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 67/499
+
+train Epoch 69:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 68/499
+----------
+
+train Epoch 70:  25%|██▌       | 1/4 [00:00<00:01,  2.02it/s, loss=0.833, dice=tensor(0.7282, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 69/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 70/499
+
+train Epoch 72:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 71/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 72/499
+----------
+train Loss: 0.8424 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 73/499
+
+
+train Epoch 75:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 74/499
+----------
+
+train Epoch 76:  75%|███████▌  | 3/4 [00:00<00:00,  4.84it/s, loss=0.829, dice=tensor(0.7817, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 75/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 76/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 77/499
+----------
+
+train Epoch 78:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 78/499
+----------
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 79/499
+
+train Epoch 79:  75%|███████▌  | 3/4 [00:00<00:00,  4.83it/s, loss=0.844, dice=tensor(0.7824, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 80/499
+----------
+
+train Epoch 81:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 81/499
+----------
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 82/499
+
+train Epoch 82:  75%|███████▌  | 3/4 [00:00<00:00,  5.05it/s, loss=0.817, dice=tensor(0.7827, device='cuda:0')]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 83/499
+----------
+
+train Epoch 84:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 84/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 85/499
+----------
+
+train Epoch 85:  75%|███████▌  | 3/4 [00:00<00:00,  4.84it/s, loss=0.817, dice=tensor(0.7823, device='cuda:0')]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 86/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 87/499
+
+train Epoch 87:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 88/499
+----------
+
+val Epoch 88:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 89/499
+----------
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 90/499
+
+train Epoch 90:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8430 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 91/499
+----------
+
+val Epoch 91:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 92/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 93/499
+
+train Epoch 93:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 94/499
+----------
+
+val Epoch 94:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 95/499
+----------
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 96/499
+
+train Epoch 96:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 97/499
+----------
+
+val Epoch 97:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 98/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 99/499
+
+train Epoch 99:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 100/499
+
+val Epoch 100:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8739 Dice: 0.1258
+Epoch 101/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 102/499
+
+train Epoch 102:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8433 Dice: 0.1560
+val Loss: 0.8738 Dice: 0.1258
+Epoch 103/499
+
+val Epoch 103:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 104/499
+----------
+
+train Epoch 105:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 105/499
+----------
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 106/499
+
+val Epoch 106:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 107/499
+----------
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 108/499
+
+train Epoch 108:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 109/499
+
+val Epoch 109:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 110/499
+----------
+
+train Epoch 111:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 111/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 112/499
+
+val Epoch 112:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 113/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 114/499
+
+train Epoch 114:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 115/499
+
+train Epoch 115:  75%|███████▌  | 3/4 [00:00<00:00,  4.80it/s, loss=0.847, dice=tensor(0.8144, device='cuda:0')]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 116/499
+----------
+
+train Epoch 117:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 117/499
+----------
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 118/499
+
+val Epoch 118:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8429 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 119/499
+----------
+train Loss: 0.8427 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 120/499
+
+train Epoch 120:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 121/499
+
+val Epoch 121:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 122/499
+----------
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 123/499
+
+train Epoch 123:  25%|██▌       | 1/4 [00:00<00:01,  2.05it/s, loss=0.831, dice=tensor(0.8368, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 124/499
+----------
+
+val Epoch 124:  50%|█████     | 1/2 [00:00<00:00,  3.04it/s, loss=0.865, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 125/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 126/499
+
+train Epoch 126:  25%|██▌       | 1/4 [00:00<00:01,  1.86it/s, loss=0.816, dice=tensor(0.9125, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 127/499
+----------
+
+val Epoch 127:  50%|█████     | 1/2 [00:00<00:00,  2.62it/s, loss=0.886, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 128/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 129/499
+
+train Epoch 129:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 130/499
+
+val Epoch 130:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 131/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 132/499
+
+train Epoch 132:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 133/499
+
+val Epoch 133:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 134/499
+----------
+
+train Epoch 135:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 135/499
+----------
+train Loss: 0.8422 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 136/499
+
+train Epoch 136:  75%|███████▌  | 3/4 [00:00<00:00,  4.51it/s, loss=0.868, dice=tensor(0.7824, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 137/499
+----------
+
+val Epoch 137:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 138/499
+----------
+train Loss: 0.8428 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 139/499
+
+train Epoch 139:  75%|███████▌  | 3/4 [00:00<00:00,  5.17it/s, loss=0.832, dice=tensor(0.7820, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 140/499
+----------
+
+train Epoch 141:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 141/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 142/499
+
+train Epoch 142:  75%|███████▌  | 3/4 [00:00<00:00,  4.91it/s, loss=0.842, dice=tensor(0.7821, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 143/499
+----------
+
+train Epoch 144:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 144/499
+----------
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 145/499
+
+train Epoch 145:  75%|███████▌  | 3/4 [00:00<00:00,  4.99it/s, loss=0.85, dice=tensor(0.7690, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 146/499
+----------
+
+train Epoch 147:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 147/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 148/499
+
+train Epoch 148:  25%|██▌       | 1/4 [00:00<00:01,  1.78it/s, loss=0.866, dice=tensor(0.6679, device='cuda:0')]
+train Loss: 0.8427 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 149/499
+----------
+
+val Epoch 149:  50%|█████     | 1/2 [00:00<00:00,  2.78it/s, loss=0.885, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 150/499
+----------
+train Loss: 0.8422 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 151/499
+
+train Epoch 151:  25%|██▌       | 1/4 [00:00<00:01,  1.63it/s, loss=0.83, dice=tensor(0.8561, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 152/499
+
+val Epoch 152:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 153/499
+----------
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 154/499
+
+train Epoch 154:  25%|██▌       | 1/4 [00:00<00:01,  2.00it/s, loss=0.838, dice=tensor(0.8094, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 155/499
+
+val Epoch 155:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 156/499
+----------
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 157/499
+
+train Epoch 157:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 158/499
+
+val Epoch 158:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8429 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 159/499
+----------
+train Loss: 0.8429 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 160/499
+
+train Epoch 160:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 161/499
+
+val Epoch 161:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 162/499
+----------
+train Loss: 0.8429 Dice: 0.1561
+val Loss: 0.8738 Dice: 0.1258
+Epoch 163/499
+
+train Epoch 163:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 164/499
+
+val Epoch 164:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 165/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 166/499
+
+
+val Epoch 167:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 167/499
+
+train Epoch 169:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 168/499
+----------
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8739 Dice: 0.1258
+Epoch 169/499
+
+val Epoch 170:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 170/499
+
+train Epoch 172:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 171/499
+----------
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 172/499
+
+val Epoch 173:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 173/499
+
+train Epoch 175:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 174/499
+----------
+train Loss: 0.8427 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 175/499
+
+val Epoch 176:  50%|█████     | 1/2 [00:00<00:00,  2.97it/s, loss=0.861, dice=tensor(0.6946, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 176/499
+
+train Epoch 178:  25%|██▌       | 1/4 [00:00<00:01,  2.02it/s, loss=0.822, dice=tensor(0.8277, device='cuda:0')]
+train Loss: 0.8429 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 177/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 178/499
+
+val Epoch 179:  50%|█████     | 1/2 [00:00<00:00,  2.82it/s, loss=0.863, dice=tensor(0.6842, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 179/499
+
+train Epoch 181:  25%|██▌       | 1/4 [00:00<00:01,  1.94it/s, loss=0.863, dice=tensor(0.7708, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 180/499
+----------
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 181/499
+
+val Epoch 182:  50%|█████     | 1/2 [00:00<00:00,  2.92it/s, loss=0.876, dice=tensor(0.6288, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 182/499
+----------
+
+train Epoch 184:  75%|███████▌  | 3/4 [00:00<00:00,  4.85it/s, loss=0.879, dice=tensor(0.7573, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 183/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 184/499
+
+train Epoch 186:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 185/499
+----------
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 186/499
+
+train Epoch 187:  75%|███████▌  | 3/4 [00:00<00:00,  4.94it/s, loss=0.834, dice=tensor(0.8150, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 187/499
+
+train Epoch 189:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 188/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 189/499
+
+train Epoch 190:  25%|██▌       | 1/4 [00:00<00:01,  1.75it/s, loss=0.834, dice=tensor(0.7618, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 190/499
+
+train Epoch 192:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 191/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 192/499
+
+train Epoch 193:  25%|██▌       | 1/4 [00:00<00:01,  1.74it/s, loss=0.843, dice=tensor(0.7613, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 193/499
+
+train Epoch 195:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8431 Dice: 0.1561
+val Loss: 0.8738 Dice: 0.1258
+Epoch 194/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 195/499
+----------
+train Loss: 0.8426 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 196/499
+
+
+train Epoch 198:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 197/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 198/499
+
+train Epoch 199:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 199/499
+----------
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 200/499
+----------
+
+val Epoch 200:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 201/499
+----------
+train Loss: 0.8427 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 202/499
+
+train Epoch 202:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 203/499
+----------
+
+val Epoch 203:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 204/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 205/499
+
+train Epoch 205:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 206/499
+----------
+
+val Epoch 206:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 207/499
+----------
+train Loss: 0.8430 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 208/499
+
+train Epoch 208:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8430 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 209/499
+----------
+
+val Epoch 209:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 210/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 211/499
+
+train Epoch 211:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1561
+val Loss: 0.8738 Dice: 0.1258
+Epoch 212/499
+----------
+
+val Epoch 212:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 213/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 214/499
+
+train Epoch 214:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 215/499
+----------
+
+val Epoch 215:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 216/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 217/499
+
+train Epoch 217:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 218/499
+----------
+
+val Epoch 218:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 219/499
+----------
+train Loss: 0.8428 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 220/499
+
+train Epoch 220:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8429 Dice: 0.1560
+val Loss: 0.8738 Dice: 0.1258
+Epoch 221/499
+----------
+
+
+train Epoch 223:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 222/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 223/499
+
+val Epoch 224:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 224/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 225/499
+----------
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 226/499
+
+train Epoch 226:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 227/499
+
+train Epoch 227:  75%|███████▌  | 3/4 [00:00<00:00,  4.40it/s, loss=0.87, dice=tensor(0.7929, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 228/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 229/499
+
+train Epoch 229:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 230/499
+----------
+
+val Epoch 230:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 231/499
+----------
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 232/499
+
+train Epoch 232:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 233/499
+
+val Epoch 233:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8422 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 234/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 235/499
+
+
+val Epoch 236:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 236/499
+----------
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 237/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 238/499
+
+train Epoch 238:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 239/499
+----------
+
+val Epoch 239:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 240/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 241/499
+
+train Epoch 241:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 242/499
+----------
+
+val Epoch 242:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 243/499
+----------
+train Loss: 0.8428 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 244/499
+
+train Epoch 244:  25%|██▌       | 1/4 [00:00<00:01,  2.02it/s, loss=0.835, dice=tensor(0.8166, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 245/499
+----------
+
+val Epoch 245:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 246/499
+----------
+train Loss: 0.8430 Dice: 0.1561
+val Loss: 0.8737 Dice: 0.1258
+Epoch 247/499
+
+train Epoch 247:  25%|██▌       | 1/4 [00:00<00:01,  1.94it/s, loss=0.824, dice=tensor(0.8730, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 248/499
+----------
+
+val Epoch 248:  50%|█████     | 1/2 [00:00<00:00,  2.88it/s, loss=0.891, dice=tensor(0.5430, device='cuda:0')]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 249/499
+----------
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 250/499
+
+train Epoch 250:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 251/499
+----------
+
+
+train Epoch 253:  25%|██▌       | 1/4 [00:00<00:01,  1.71it/s, loss=0.822, dice=tensor(0.8868, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 252/499
+----------
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 253/499
+
+val Epoch 254:  50%|█████     | 1/2 [00:00<00:00,  2.60it/s, loss=0.859, dice=tensor(0.7019, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 254/499
+----------
+
+train Epoch 256:  25%|██▌       | 1/4 [00:00<00:01,  1.89it/s, loss=0.865, dice=tensor(0.6731, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 255/499
+----------
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 256/499
+
+val Epoch 257:  50%|█████     | 1/2 [00:00<00:00,  2.80it/s, loss=0.872, dice=tensor(0.6340, device='cuda:0')]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 257/499
+----------
+
+train Epoch 259:  25%|██▌       | 1/4 [00:00<00:01,  1.91it/s, loss=0.826, dice=tensor(0.8655, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 258/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 259/499
+
+val Epoch 260:  50%|█████     | 1/2 [00:00<00:00,  2.64it/s, loss=0.868, dice=tensor(0.6288, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 260/499
+----------
+
+train Epoch 262:  25%|██▌       | 1/4 [00:00<00:01,  1.84it/s, loss=0.833, dice=tensor(0.8255, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 261/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 262/499
+
+val Epoch 263:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 263/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 264/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 265/499
+
+train Epoch 265:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 266/499
+----------
+
+val Epoch 266:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 267/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 268/499
+
+train Epoch 268:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8739 Dice: 0.1258
+Epoch 269/499
+----------
+
+val Epoch 269:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 270/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 271/499
+
+train Epoch 271:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 272/499
+----------
+
+val Epoch 272:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 273/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 274/499
+
+train Epoch 274:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 275/499
+
+val Epoch 275:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 276/499
+----------
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 277/499
+
+train Epoch 277:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 278/499
+
+val Epoch 278:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 279/499
+----------
+train Loss: 0.8423 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 280/499
+
+train Epoch 280:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 281/499
+
+train Epoch 281:  75%|███████▌  | 3/4 [00:00<00:00,  4.48it/s, loss=0.814, dice=tensor(0.7455, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 282/499
+----------
+
+train Epoch 283:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 283/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 284/499
+
+train Epoch 284:  75%|███████▌  | 3/4 [00:00<00:00,  5.30it/s, loss=0.85, dice=tensor(0.7829, device='cuda:0')]
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 285/499
+----------
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 286/499
+
+train Epoch 286:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 287/499
+
+train Epoch 287:  75%|███████▌  | 3/4 [00:00<00:00,  4.56it/s, loss=0.828, dice=tensor(0.7821, device='cuda:0')]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 288/499
+----------
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 289/499
+
+train Epoch 289:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 290/499
+
+val Epoch 290:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 291/499
+----------
+train Loss: 0.8431 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 292/499
+
+train Epoch 292:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 293/499
+
+val Epoch 293:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 294/499
+----------
+
+val Epoch 294:  50%|█████     | 1/2 [00:00<00:00,  2.86it/s, loss=0.885, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 295/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 296/499
+
+val Epoch 296:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 297/499
+----------
+
+train Epoch 298:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 298/499
+----------
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 299/499
+
+val Epoch 299:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 300/499
+----------
+
+train Epoch 301:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 301/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 302/499
+
+
+train Epoch 304:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 303/499
+----------
+
+train Epoch 305:  75%|███████▌  | 3/4 [00:00<00:00,  4.93it/s, loss=0.817, dice=tensor(0.7822, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 304/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 305/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 306/499
+----------
+
+train Epoch 307:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 307/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 308/499
+
+val Epoch 308:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1561
+val Loss: 0.8737 Dice: 0.1258
+Epoch 309/499
+----------
+
+train Epoch 310:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 310/499
+----------
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 311/499
+
+val Epoch 311:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 312/499
+----------
+train Loss: 0.8428 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 313/499
+
+
+train Epoch 313:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 314/499
+----------
+train Epoch 316:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 315/499
+----------
+
+train Epoch 317:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 316/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 317/499
+
+train Epoch 319:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 318/499
+----------
+
+val Epoch 320:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 319/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 320/499
+
+train Epoch 322:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 321/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 322/499
+
+val Epoch 323:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 323/499
+
+train Epoch 325:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 324/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 325/499
+
+val Epoch 326:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 326/499
+
+train Epoch 328:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 327/499
+----------
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8739 Dice: 0.1258
+Epoch 328/499
+
+val Epoch 329:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 329/499
+
+train Epoch 331:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 330/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 331/499
+
+val Epoch 332:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 332/499
+
+train Epoch 334:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 333/499
+----------
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 334/499
+
+val Epoch 335:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 335/499
+
+train Epoch 337:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 336/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 337/499
+----------
+train Loss: 0.8428 Dice: 0.1562
+val Loss: 0.8739 Dice: 0.1258
+Epoch 338/499
+
+val Epoch 338:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8422 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 339/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 340/499
+
+train Epoch 340:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 341/499
+
+val Epoch 341:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 342/499
+----------
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 343/499
+
+train Epoch 343:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 344/499
+
+val Epoch 344:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 345/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 346/499
+
+train Epoch 346:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 347/499
+
+val Epoch 347:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 348/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 349/499
+
+train Epoch 349:  25%|██▌       | 1/4 [00:00<00:01,  1.95it/s, loss=0.834, dice=tensor(0.8271, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 350/499
+
+val Epoch 350:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 351/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 352/499
+
+train Epoch 352:  25%|██▌       | 1/4 [00:00<00:01,  1.81it/s, loss=0.852, dice=tensor(0.7329, device='cuda:0')]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 353/499
+----------
+
+val Epoch 353:  50%|█████     | 1/2 [00:00<00:00,  2.88it/s, loss=0.886, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 354/499
+----------
+train Loss: 0.8427 Dice: 0.1561
+val Loss: 0.8738 Dice: 0.1258
+Epoch 355/499
+
+train Epoch 355:  25%|██▌       | 1/4 [00:00<00:01,  1.78it/s, loss=0.844, dice=tensor(0.7750, device='cuda:0')]
+train Loss: 0.8429 Dice: 0.1561
+val Loss: 0.8738 Dice: 0.1258
+Epoch 356/499
+
+val Epoch 356:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 357/499
+----------
+train Loss: 0.8428 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 358/499
+
+train Epoch 358:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 359/499
+
+val Epoch 359:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 360/499
+----------
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 361/499
+
+train Epoch 361:  25%|██▌       | 1/4 [00:00<00:01,  1.95it/s, loss=0.879, dice=tensor(0.6057, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 362/499
+
+val Epoch 362:  50%|█████     | 1/2 [00:00<00:00,  2.88it/s, loss=0.879, dice=tensor(0.6288, device='cuda:0')]
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 363/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 364/499
+
+train Epoch 364:  25%|██▌       | 1/4 [00:00<00:01,  1.85it/s, loss=0.852, dice=tensor(0.7309, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1566
+val Loss: 0.8739 Dice: 0.1258
+Epoch 365/499
+
+val Epoch 365:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 366/499
+----------
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 367/499
+
+train Epoch 367:  25%|██▌       | 1/4 [00:00<00:01,  1.95it/s, loss=0.809, dice=tensor(0.8801, device='cuda:0')]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 368/499
+----------
+
+val Epoch 368:  50%|█████     | 1/2 [00:00<00:00,  2.71it/s, loss=0.87, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 369/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 370/499
+
+train Epoch 370:  25%|██▌       | 1/4 [00:00<00:01,  1.96it/s, loss=0.818, dice=tensor(0.8368, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 371/499
+
+val Epoch 371:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 372/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 373/499
+
+train Epoch 373:  25%|██▌       | 1/4 [00:00<00:01,  1.90it/s, loss=0.854, dice=tensor(0.7233, device='cuda:0')]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 374/499
+
+val Epoch 374:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 375/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 376/499
+
+train Epoch 376:  25%|██▌       | 1/4 [00:00<00:01,  2.01it/s, loss=0.845, dice=tensor(0.7671, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 377/499
+
+val Epoch 377:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 378/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 379/499
+
+train Epoch 379:  25%|██▌       | 1/4 [00:00<00:01,  1.97it/s, loss=0.864, dice=tensor(0.6789, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 380/499
+----------
+
+val Epoch 380:  50%|█████     | 1/2 [00:00<00:00,  2.94it/s, loss=0.886, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 381/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 382/499
+
+train Epoch 382:  75%|███████▌  | 3/4 [00:00<00:00,  4.89it/s, loss=0.82, dice=tensor(0.8129, device='cuda:0')]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 383/499
+----------
+
+train Epoch 384:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 384/499
+----------
+train Loss: 0.8430 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 385/499
+
+train Epoch 385:  75%|███████▌  | 3/4 [00:00<00:00,  4.63it/s, loss=0.856, dice=tensor(0.8233, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 386/499
+----------
+
+train Epoch 387:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 387/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 388/499
+
+train Epoch 388:  75%|███████▌  | 3/4 [00:00<00:00,  5.04it/s, loss=0.882, dice=tensor(0.7789, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 389/499
+----------
+
+train Epoch 390:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 390/499
+----------
+train Loss: 0.8428 Dice: 0.1561
+val Loss: 0.8738 Dice: 0.1258
+Epoch 391/499
+
+train Epoch 391:  25%|██▌       | 1/4 [00:00<00:01,  1.82it/s, loss=0.84, dice=tensor(0.7329, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 392/499
+----------
+
+train Epoch 393:   0%|          | 0/4 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 393/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 394/499
+
+train Epoch 394:  25%|██▌       | 1/4 [00:00<00:01,  1.76it/s, loss=0.881, dice=tensor(0.7247, device='cuda:0')]
+train Loss: 0.8432 Dice: 0.1561
+val Loss: 0.8739 Dice: 0.1258
+Epoch 395/499
+----------
+
+val Epoch 395:  50%|█████     | 1/2 [00:00<00:00,  2.39it/s, loss=0.861, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 396/499
+----------
+train Loss: 0.8430 Dice: 0.1562
+val Loss: 0.8739 Dice: 0.1258
+Epoch 397/499
+
+train Epoch 397:  25%|██▌       | 1/4 [00:00<00:01,  1.72it/s, loss=0.861, dice=tensor(0.6903, device='cuda:0')]
+train Loss: 0.8430 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 398/499
+
+train Epoch 398:  75%|███████▌  | 3/4 [00:00<00:00,  4.72it/s, loss=0.86, dice=tensor(0.7922, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 399/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 400/499
+
+train Epoch 400:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 401/499
+
+train Epoch 401:  25%|██▌       | 1/4 [00:00<00:01,  1.68it/s, loss=0.826, dice=tensor(0.7527, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 402/499
+----------
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 403/499
+
+train Epoch 403:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 404/499
+
+train Epoch 404:  25%|██▌       | 1/4 [00:00<00:01,  1.80it/s, loss=0.871, dice=tensor(0.7393, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 405/499
+----------
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 406/499
+
+train Epoch 406:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 407/499
+
+train Epoch 407:  25%|██▌       | 1/4 [00:00<00:01,  1.77it/s, loss=0.866, dice=tensor(0.7551, device='cuda:0')]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 408/499
+----------
+train Loss: 0.8427 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 409/499
+
+train Epoch 409:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 410/499
+
+train Epoch 410:  75%|███████▌  | 3/4 [00:00<00:00,  4.76it/s, loss=0.829, dice=tensor(0.8261, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 411/499
+----------
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 412/499
+
+train Epoch 412:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 413/499
+
+train Epoch 413:  75%|███████▌  | 3/4 [00:00<00:00,  5.29it/s, loss=0.818, dice=tensor(0.7584, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 414/499
+----------
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 415/499
+
+train Epoch 415:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8429 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 416/499
+
+train Epoch 416:  75%|███████▌  | 3/4 [00:00<00:00,  4.83it/s, loss=0.848, dice=tensor(0.7824, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 417/499
+----------
+train Loss: 0.8424 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 418/499
+
+train Epoch 418:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 419/499
+
+train Epoch 419:  75%|███████▌  | 3/4 [00:00<00:00,  4.66it/s, loss=0.803, dice=tensor(0.8544, device='cuda:0')]
+train Loss: 0.8428 Dice: 0.1565
+val Loss: 0.8739 Dice: 0.1258
+Epoch 420/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 421/499
+
+train Epoch 421:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 422/499
+
+train Epoch 422:  75%|███████▌  | 3/4 [00:00<00:00,  4.82it/s, loss=0.821, dice=tensor(0.7821, device='cuda:0')]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 423/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 424/499
+
+train Epoch 424:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 425/499
+
+train Epoch 425:  75%|███████▌  | 3/4 [00:00<00:00,  4.79it/s, loss=0.839, dice=tensor(0.7817, device='cuda:0')]
+train Loss: 0.8424 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 426/499
+----------
+train Loss: 0.8427 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 427/499
+
+train Epoch 427:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 428/499
+
+train Epoch 428:  75%|███████▌  | 3/4 [00:00<00:00,  4.47it/s, loss=0.835, dice=tensor(0.7387, device='cuda:0')]
+train Loss: 0.8429 Dice: 0.1560
+val Loss: 0.8737 Dice: 0.1258
+Epoch 429/499
+----------
+
+val Epoch 429:  50%|█████     | 1/2 [00:00<00:00,  2.90it/s, loss=0.891, dice=tensor(0.6288, device='cuda:0')]
+val Loss: 0.8739 Dice: 0.1258
+Epoch 430/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 431/499
+
+train Epoch 431:  75%|███████▌  | 3/4 [00:00<00:00,  4.70it/s, loss=0.836, dice=tensor(0.7358, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 432/499
+----------
+train Loss: 0.8422 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 433/499
+
+train Epoch 433:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 434/499
+
+train Epoch 434:  75%|███████▌  | 3/4 [00:00<00:00,  4.91it/s, loss=0.842, dice=tensor(0.7822, device='cuda:0')]
+train Loss: 0.8423 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 435/499
+----------
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 436/499
+
+train Epoch 436:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 437/499
+
+train Epoch 437:  75%|███████▌  | 3/4 [00:00<00:00,  4.86it/s, loss=0.861, dice=tensor(0.7870, device='cuda:0')]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 438/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 439/499
+
+train Epoch 439:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 440/499
+
+val Epoch 440:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 441/499
+----------
+train Loss: 0.8432 Dice: 0.1562
+val Loss: 0.8738 Dice: 0.1258
+Epoch 442/499
+
+train Epoch 442:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 443/499
+
+train Epoch 443:  75%|███████▌  | 3/4 [00:00<00:00,  4.67it/s, loss=0.841, dice=tensor(0.7820, device='cuda:0')]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 444/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 445/499
+
+train Epoch 445:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 446/499
+----------
+
+val Epoch 446:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 447/499
+----------
+train Loss: 0.8423 Dice: 0.1566
+val Loss: 0.8737 Dice: 0.1258
+Epoch 448/499
+
+train Epoch 448:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 449/499
+----------
+
+val Epoch 449:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 450/499
+----------
+train Loss: 0.8427 Dice: 0.1562
+val Loss: 0.8737 Dice: 0.1258
+Epoch 451/499
+
+train Epoch 451:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 452/499
+
+train Epoch 452:  75%|███████▌  | 3/4 [00:00<00:00,  4.89it/s, loss=0.838, dice=tensor(0.7525, device='cuda:0')]
+train Loss: 0.8424 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 453/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 454/499
+
+train Epoch 454:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 455/499
+----------
+
+val Epoch 455:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 456/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 457/499
+
+train Epoch 457:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 458/499
+
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 459/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 460/499
+----------
+train Epoch 460:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8739 Dice: 0.1258
+Epoch 461/499
+
+val Epoch 461:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 462/499
+----------
+train Loss: 0.8429 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 463/499
+
+train Epoch 463:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 464/499
+
+val Epoch 464:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 465/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 466/499
+
+train Epoch 466:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 467/499
+
+val Epoch 467:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 468/499
+----------
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 469/499
+
+train Epoch 469:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8429 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 470/499
+
+val Epoch 470:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 471/499
+----------
+train Loss: 0.8423 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 472/499
+
+train Epoch 472:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8430 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 473/499
+----------
+
+val Epoch 473:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 474/499
+----------
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 475/499
+
+train Epoch 475:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8737 Dice: 0.1258
+Epoch 476/499
+
+val Epoch 476:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 477/499
+----------
+train Loss: 0.8427 Dice: 0.1563
+val Loss: 0.8739 Dice: 0.1258
+Epoch 478/499
+
+train Epoch 478:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 479/499
+
+val Epoch 479:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1565
+val Loss: 0.8737 Dice: 0.1258
+Epoch 480/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 481/499
+
+train Epoch 481:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 482/499
+----------
+
+val Epoch 482:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 483/499
+----------
+train Loss: 0.8428 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 484/499
+
+train Epoch 484:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8424 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 485/499
+----------
+
+val Epoch 485:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 486/499
+----------
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 487/499
+
+train Epoch 487:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 488/499
+----------
+
+val Epoch 488:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8738 Dice: 0.1258
+Epoch 489/499
+----------
+train Loss: 0.8425 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 490/499
+
+train Epoch 490:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Epoch 491/499
+----------
+
+val Epoch 491:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 492/499
+----------
+train Loss: 0.8425 Dice: 0.1563
+val Loss: 0.8738 Dice: 0.1258
+Epoch 493/499
+
+train Epoch 493:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8423 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 494/499
+----------
+
+val Epoch 494:   0%|          | 0/2 [00:00<?, ?it/s]
+val Loss: 0.8737 Dice: 0.1258
+Epoch 495/499
+----------
+train Loss: 0.8425 Dice: 0.1566
+val Loss: 0.8738 Dice: 0.1258
+Epoch 496/499
+
+train Epoch 496:   0%|          | 0/4 [00:00<?, ?it/s]
+train Loss: 0.8426 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 497/499
+
+val Epoch 497:   0%|          | 0/2 [00:00<?, ?it/s]
+train Loss: 0.8429 Dice: 0.1564
+val Loss: 0.8737 Dice: 0.1258
+Epoch 498/499
+----------
+train Loss: 0.8423 Dice: 0.1565
+val Loss: 0.8738 Dice: 0.1258
+Epoch 499/499
+
+train Epoch 499:  25%|██▌       | 1/4 [00:00<00:01,  1.82it/s, loss=0.869, dice=tensor(0.6549, device='cuda:0')]
+train Loss: 0.8427 Dice: 0.1564
+val Loss: 0.8738 Dice: 0.1258
+Best val loss: 0.873711, best val dice: 0.125762
+
+Model saved at: ./modelsDIAS/final_model.pth

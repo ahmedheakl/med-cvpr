@@ -14,6 +14,8 @@ from typing import Optional, Tuple, Type
 
 from .common import LayerNorm2d, MLPBlock
 from .svd_layers import SVDLinear, SVDConv2d
+# from .SALT_layers import SALTLinear , SALTConv2d
+# from .SALT_layers_2 import SALTLinear , SALTConv2d
 from .lora_layers import LoRAConv2D, LoRALinear
 
 # This class and its supporting functions below lightly adapted from the ViTDet backbone available at: https://github.com/facebookresearch/detectron2/blob/main/detectron2/modeling/backbone/vit.py # noqa
@@ -205,8 +207,12 @@ class Neck(nn.Module):
             self.conv1 = LoRAConv2D(embed_dim, out_chans, kernel_size=1, bias=False)
             self.conv2 = LoRAConv2D(out_chans, out_chans, kernel_size=3, padding=1, bias=False)
         else:
+            rank_value = 730
+            # self.conv1 = SALTConv2d(embed_dim, out_chans, kernel_size=1, bias=False , rank=rank_value , r_lora=64)
+            # self.conv2 = SALTConv2d(out_chans, out_chans, kernel_size=3, padding=1, bias=False , rank=rank_value , r_lora=64)
             self.conv1 = SVDConv2d(embed_dim, out_chans, kernel_size=1, bias=False, mlp_transform=mlp_transform)
             self.conv2 = SVDConv2d(out_chans, out_chans, kernel_size=3, padding=1, bias=False, mlp_transform=mlp_transform)
+        
         
         self.ln1 = LayerNorm2d(out_chans)
         self.ln2 = LayerNorm2d(out_chans)        
@@ -322,6 +328,9 @@ class Attention(nn.Module):
             self.qkv = LoRALinear(dim, dim * 3, bias=qkv_bias)
             self.proj = LoRALinear(dim, dim)
         else:
+            rank_value = 200
+            # self.qkv = SALTLinear(dim, dim * 3, bias=qkv_bias , r_lora=64 , rank=rank_value)
+            # self.proj = SALTLinear(dim, dim , r_lora=64 , rank=rank_value)
             self.qkv = SVDLinear(dim, dim * 3, bias=qkv_bias, mlp_transform=mlp_transform)
             self.proj = SVDLinear(dim, dim, mlp_transform=mlp_transform)
 

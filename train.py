@@ -7,7 +7,30 @@ import os
 from data_utils import *
 from model import *
 from utils import *
+import yaml
+from tqdm import tqdm
+import wandb
+def print_model_parameters_stats(model):
+    total_params = sum(p.numel() for p in model.parameters())
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    frozen_params = total_params - trainable_params
 
+    print(f"Total parameters: {total_params:,}")
+    print(f"Trainable parameters: {trainable_params:,}")
+    print(f"Frozen parameters: {frozen_params:,}")
+
+    # Print parameters by module
+    print("\nParameters by module:")
+    for name, module in model.named_children():
+        total_params = sum(p.numel() for p in module.parameters())
+        trainable_params = sum(p.numel() for p in module.parameters() if p.requires_grad)
+        frozen_params = total_params - trainable_params
+        print("*************************************************************************************************************")
+        print(f"  {name}:")
+        print(f"    Total: {total_params:,}")
+        print(f"    Trainable: {trainable_params:,}")
+        print(f"    Frozen: {frozen_params:,}")
+        print("*******************************************************************************************")
 
 def train(model, tr_dataset, val_dataset, criterion, optimizer, sav_path='./checkpoints/temp.pth', num_epochs=25, bs=32, device='cuda:0'):
     model = model.to(device)
@@ -106,115 +129,167 @@ def train(model, tr_dataset, val_dataset, criterion, optimizer, sav_path='./chec
 
     return model
 
-def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sav_path='./checkpoints/temp.pth', num_epochs=25, bs=32, device='cuda:0', retain_graph=False, neg2pos_ratio=-1, reg_multiplier = 0.01):
+
+
+import torch
+import wandb
+from tqdm import tqdm
+import os
+from PIL import Image
+import numpy as np
+from utils import running_stats, dice_collated
+
+import os
+from PIL import Image
+import numpy as np
+from pathlib import Path
+
+# Load configuration from data_config.yml
+with open('/home/abdelrahman.elsayed/sarim_code/config_arcade.yml', 'r') as data_config_file:
+    data_config = yaml.safe_load(data_config_file)
+
+# Load configuration from model_svdtuning.yml
+with open('/home/abdelrahman.elsayed/sarim_code/model_baseline.yml', 'r') as model_config_file:
+    model_config = yaml.safe_load(model_config_file)
+
+def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sav_path='./checkpoints/temp.pth', num_epochs=25, bs=32, device='cuda:0', retain_graph=False, neg2pos_ratio=-1, save_dir="./validation_images", reg_multiplier=0.01):
+    torch.cuda.empty_cache()
     model = model.to(device)
     best_dice = 0
-    best_loss=10000
+    best_loss = 10000
+    print_model_parameters_stats(model)
+
+    # Create directories for saving images
+    print(save_dir)
+    # save_dir_test = Path(save_dir)
+    # if save_dir_test.is_dir():
+    #     print("The experiment was run")
+    #     return model
+    label_dir = os.path.join(save_dir, 'labels')
+    pred_dir = os.path.join(save_dir, 'pred_labels')
+    os.makedirs(label_dir, exist_ok=True)
+    os.makedirs(pred_dir, exist_ok=True)
+
+    run_name = f"{data_config['data']['root_path'].split('/')[-1]}_model_{model_config['arch']}"
+    # Initialize wandb
+    wandb.init(project="final_bench",name = run_name, config={
+        "learning_rate": optimizer.param_groups[0]['lr'],
+        "batch_size": bs,
+        "num_epochs": num_epochs,
+        "reg_multiplier": reg_multiplier
+    })
 
     print("Training parameters: \n----------")
     print('number of trainable parameters: ', sum(p.numel() for p in model.parameters() if p.requires_grad))
     print("batch size: ", bs)
     print("num epochs: ", num_epochs)
+
     for epoch in range(num_epochs):
         print(f'Epoch {epoch}/{num_epochs - 1}')
         print('-' * 10)
         dataloaders = {}
+
         # Each epoch has a training and validation phase
         for phase in ['train', 'val']:
             if phase == 'train':
-                model.train()  # Set model to training mode
+                model.train()
                 if neg2pos_ratio > 0:
                     datasets[phase].generate_examples(neg2pos_ratio)
             else:
-                model.eval()   # Set model to evaluate mode
+                model.eval()
 
             running_loss = 0.0
-            running_intersection = 0
-            running_union = 0
-            running_corrects = 0
             running_dice = 0
-            intermediate_count = 0
             count = 0
-            preds_all = []
-            gold = []
             dataloaders[phase] = torch.utils.data.DataLoader(datasets[phase], batch_size=bs, shuffle=True, num_workers=4)
 
+            # Wrap dataloader with tqdm for progress bar
+            pbar = tqdm(dataloaders[phase], desc=f'{phase} Epoch {epoch}', leave=False)
 
-            # Iterate over data.
-            for inputs, labels,text_idxs, text in dataloaders[phase]:
-                count+=1
-                intermediate_count += inputs.shape[0]
-
+            # Iterate over data
+            for batch_idx, (inputs, labels, text_idxs, text) in enumerate(pbar):
+                count += 1
                 inputs = inputs.to(device)
                 labels = labels.to(device)
 
-                # zero the parameter gradients
                 optimizer.zero_grad()
 
-                # forward
-                # track history if only in train
                 with torch.set_grad_enabled(phase == 'train'):
                     outputs, reg_loss = model(inputs, text)
-                    # print(outputs)
-                    # print(outputs.shape)
-                    # print(outputs)
-                    loss=0
+                    if len(outputs.shape) == 4:
+                        outputs = torch.squeeze(outputs, dim=1)
+                    loss = 0
                     seg_loss = 0
                     for c in criterion:
-                        try:
+                        if 'text' in c.__code__.co_varnames:
                             seg_loss += c(outputs, text, labels.float())
-                        except:
+                        else:
                             seg_loss += c(outputs, labels.float())
                     loss += seg_loss
-                    loss += (reg_loss*reg_multiplier)
-                    # print("Reg loss: ",reg_loss)
-                    
-                    # backward + optimize only if in training phase
+                    loss += (reg_loss * reg_multiplier)
+
                     if phase == 'train':
-                        loss.backward(retain_graph=retain_graph)
+                        loss.backward(retain_graph=True)
                         optimizer.step()
 
                 with torch.no_grad():
-                    preds = (outputs>=0.5)
-                    # preds_all.append(preds.cpu())
-                    # gold.append(labels.cpu())
-                    # epoch_dice = dice_coef(preds,labels)
-                    # if count%100==0:
-                    #     print('iteration dice: ', epoch_dice)
-
-
-                    # statistics
+                    preds = (outputs >= 0.5)
                     running_loss += loss.item() * inputs.size(0)
-                    ri, ru = running_stats(labels,preds)
-                    running_dice += dice_collated(ri,ru)
-                    # if count%5==0:
-                    #     print(count)
-                    #     print(running_loss, intermediate_count)
-                    #     print(running_loss/intermediate_count)
-            
+                    ri, ru = running_stats(labels, preds)
+                    running_dice += dice_collated(ri, ru)
+
+                    # Save images during validation (reduced frequency)
+                    if phase == 'val' and epoch % 10 == 0 and batch_idx < 5:  # Save every 10 epochs, first 5 batches
+                        for i in range(min(2, inputs.size(0))):  # Save only first 2 images of the batch
+                            img_name = f"epoch_{epoch}_batch_{batch_idx}_img_{i}.png"
+                            
+                            # Save true label
+                            label_img = labels[i].cpu().numpy() * 255
+                            label_img = Image.fromarray(label_img.astype(np.uint8))
+                            label_img.save(os.path.join(label_dir, img_name))
+                            
+                            # Save predicted label
+                            pred_img = preds[i].cpu().numpy() * 255
+                            pred_img = Image.fromarray(pred_img.astype(np.uint8))
+                            pred_img.save(os.path.join(pred_dir, img_name))
+
+                # Update progress bar
+                pbar.set_postfix({'loss': loss.item(), 'dice': running_dice / count})
+
             if phase == 'train':
                 scheduler.step()
-            print("all 0 sanity check for preds: ", preds.any())
-            print("all 1 sanity check for preds: ", not preds.all())
-            epoch_loss = running_loss / ((dataset_sizes[phase]))
-            epoch_dice = running_dice / ((dataset_sizes[phase]))
-            # epoch_dice = dice_coef(torch.cat(preds_all,axis=0),torch.cat(gold,axis=0))
-            print(f'{phase} Loss: {epoch_loss:.4f} Dice: {epoch_dice:.4f}')            
 
-            # deep copy the model
+            epoch_loss = running_loss / dataset_sizes[phase]
+            epoch_dice = running_dice / dataset_sizes[phase]
+
+            print(f'{phase} Loss: {epoch_loss:.4f} Dice: {epoch_dice:.4f}')
+
+            # Log metrics to wandb
+            wandb.log({f"{phase}_loss": epoch_loss, f"{phase}_dice": epoch_dice, "epoch": epoch})
+
             if phase == 'val' and epoch_loss < best_loss:
                 best_loss = epoch_loss
                 best_dice = epoch_dice
-                torch.save(model.state_dict(),sav_path)
+                # torch.save(model.state_dict(), sav_path)
+                wandb.run.summary["best_val_loss"] = best_loss
+                wandb.run.summary["best_val_dice"] = best_dice
             
             elif phase == 'val' and np.isnan(epoch_loss):
                 print("nan loss but saving model")
-                torch.save(model.state_dict(),sav_path)
-        # if epoch%400==0:
-        #     torch.save(model.state_dict(), sav_path[:-4]+"_epoch"+str(epoch)+".pth")
+                torch.save(model.state_dict(), sav_path)
 
-    print(f'Best val loss: {best_loss:4f}, best val accuracy: {best_dice:2f}')
+    print(f'Best val loss: {best_loss:4f}, best val dice: {best_dice:2f}')
+    with open('results_crf.txt', 'a') as file:
+        file.write(f'{save_dir} , Best val loss: {best_loss:4f}, best val dice: {best_dice:2f}\n')
+    model_save_path = f"{sav_path}/final_model.pth"
+    model_dir = os.path.dirname(model_save_path)
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
+    torch.save(model.state_dict(), model_save_path)
+    print(f"Model saved at: {model_save_path}")
 
-    # load best model weights
-    # model.load_state_dict(best_model_wts)
+
+    # Finish wandb run
+    wandb.finish()
+
     return model

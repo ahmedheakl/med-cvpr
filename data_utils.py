@@ -26,13 +26,18 @@ from data_transforms.ChestXDet_transform import ChestXDet_Transform
 from data_transforms.lits2_transform import LiTS2_Transform
 from data_transforms.btcv_transform import BTCV_Transform
 
-from datasets.isic2018 import ISIC2018_Dataset
-from datasets.polyp import Polyp_Dataset
-from datasets.rite import RITE_Dataset
-from datasets.glas import GLAS_Dataset
-from datasets.refuge import Refuge_Dataset
-from datasets.btcv import BTCV_Dataset
-from datasets.atr import ATR_Dataset
+import os
+import sys
+source_path = os.path.join('/home/abdelrahman.elsayed/sarim_code/datasets')
+sys.path.append(source_path)
+from isic2018 import ISIC2018_Dataset
+from polyp import Polyp_Dataset
+from rite import RITE_Dataset
+from glas import GLAS_Dataset
+from refuge import Refuge_Dataset
+from btcv import BTCV_Dataset
+from atr import ATR_Dataset
+from arcade import ArcadeDataset
 
 def make_positive_negative_files(config, output_root, label_dict, populated_img_path_list, populated_gt_list, populated_classname_list, rgb_gt = False, name_prefix='val'):
     # generates positive and negative example files for each class
@@ -1259,6 +1264,7 @@ def get_data(config, tr_folder_start, tr_folder_end, val_folder_start, val_folde
     dataloader_dict = {}
     dataset_sizes = {}
     #generate label_dict
+    print("hEREE")
     label_dict = {}
     for i,ln in enumerate(config['data']['label_names']):
         label_dict[ln] = i
@@ -1392,8 +1398,19 @@ def get_data(config, tr_folder_start, tr_folder_end, val_folder_start, val_folde
             if x=='val':
                 dataset_dict[x] = ATR_Dataset(config, shuffle_list=False, apply_norm=use_norm, is_train=False, no_text_mode=no_text_mode)
             dataset_sizes[x] = len(dataset_dict[x])
+    
+    elif config['data']['name']=='ArcadeDataset':
+        print("HEREEEEEE")
+        for x in ['train', 'val']:  # Changed 'test' to 'val'
+            is_train = x == 'train'
+            dataset_dict[x] = ArcadeDataset(config, is_train=is_train, shuffle_list=True, apply_norm=use_norm)
+            dataset_sizes[x] = len(dataset_dict[x])
+
+        print(f"{x.capitalize()} dataset size: {dataset_sizes[x]}")
+
 
     else:
+    
         for x in ['train','val']:
             if x=='train':
                 dataset_dict[x] = Generic_Dataset_3d(config, is_train=True, folder_start=tr_folder_start, folder_end=tr_folder_end)

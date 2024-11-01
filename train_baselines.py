@@ -11,14 +11,18 @@ from baselines import UNet, UNext, medt_net
 from vit_seg_modeling import VisionTransformer
 from vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
 from axialnet import MedT
+import sys
+source_path = os.path.join("/home/abdelrahman.elsayed/sarim_code/datasets")
+sys.path.append(source_path)
+from arcade import ArcadeDataset
 
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--data_config', default='config_tmp.yml',
+    parser.add_argument('--data_config', default='/home/abdelrahman.elsayed/sarim_code/config_arcade.yml',
                         help='data config file path')
 
-    parser.add_argument('--model_config', default='model_baseline.yml',
+    parser.add_argument('--model_config', default='/home/abdelrahman.elsayed/sarim_code/model_baseline.yml',
                         help='model config file path')
 
     parser.add_argument('--pretrained_path', default=None,
@@ -105,7 +109,62 @@ def main_train(data_config, model_config, pretrained_path, save_path, training_s
         dataloader_dict = {}
         for x in ['train','val']:
             dataloader_dict[x] = torch.utils.data.DataLoader(dataset_dict[x], batch_size=model_config['training']['batch_size'], shuffle=True, num_workers=4)
+    elif data_config["data"]["name"] == "ArcadeDataset":
+        print("HERE")
+        data_split_csv_path = data_config["data"]["data_split_csv"]
+        data_split = pd.read_csv(data_split_csv_path)
 
+        dataset_dict = {}
+        dataloader_dict = {}
+
+        use_norm = True
+        no_text_mode = False
+
+        for split in ["train", "val"]:
+            # Filter the CSV for the current split
+            split_data = data_split[data_split["split"] == split]["imgs"].tolist()
+
+            # Pass the filtered data to the dataset class (ArcadeDataset)
+            dataset_dict[split] = ArcadeDataset(
+                config=data_config,
+                file_list=split_data,  # Pass file_list as (image_path, mask_path) tuples
+                shuffle_list=True,
+                is_train=(split == "train"),
+                apply_norm=use_norm,
+                no_text_mode=no_text_mode,
+            )
+
+            # Create DataLoader for each dataset
+            dataloader_dict[split] = torch.utils.data.DataLoader(
+                dataset_dict[split],
+                batch_size=model_config["training"]["batch_size"],
+                shuffle=True,
+                num_workers=4,
+            )
+
+        # Get dataset sizes
+        dataset_sizes = {split: len(dataset_dict[split]) for split in ["train", "val"]}
+
+        # Create label dictionary
+        label_dict = {
+            name: i for i, name in enumerate(data_config["data"]["label_names"])
+        }
+
+        # Print dataset sizes
+        print(f"Train dataset size: {dataset_sizes['train']}")
+        print(f"Val dataset size: {dataset_sizes['val']}")
+
+        # Get dataset sizes
+        dataset_sizes = {split: len(dataset_dict[split]) for split in ["train", "val"]}
+
+        # Create label dictionary
+        label_dict = {
+            name: i for i, name in enumerate(data_config["data"]["label_names"])
+        }
+
+        # Print dataset sizes
+        print(f"Train dataset size: {dataset_sizes['train']}")
+        print(f"Val dataset size: {dataset_sizes['val']}")
 
 
     #load model
@@ -116,7 +175,7 @@ def main_train(data_config, model_config, pretrained_path, save_path, training_s
     if model_config['arch']=='Prompt Adapted SAM':
         model = Prompt_Adapted_SAM(model_config, label_dict, device, training_strategy=training_strategy)
     elif model_config['arch']=='UNet':
-        model = UNet(in_channels=in_channels, out_channels=out_channels)
+        model = UNet(in_channels=in_channels, out_channels=out_channels , pretrained=True)
     elif model_config['arch']=='UNext':
         model = UNext(num_classes=out_channels, input_channels=in_channels, img_size=img_size)
     elif model_config['arch']=='MedT':
@@ -136,7 +195,6 @@ def main_train(data_config, model_config, pretrained_path, save_path, training_s
 
     #training parameters
     print('number of trainable parameters: ', sum(p.numel() for p in model.parameters() if p.requires_grad))
-    1/0
     training_params = model_config['training']
     if training_params['optimizer'] == 'adamw':
         optimizer = optim.AdamW(model.parameters(), lr=float(training_params['lr']), weight_decay=float(training_params['weight_decay']))
@@ -171,7 +229,21 @@ def main_train(data_config, model_config, pretrained_path, save_path, training_s
         model = train_dl(model, dataloader_dict, dataset_sizes, criterion, optimizer, exp_lr_scheduler, save_path, num_epochs=training_params['num_epochs'], bs=training_params['batch_size'], device=device)
     elif data_config['data']['name']=='GLAS':
         model = train_dl(model, dataset_dict, dataset_sizes, criterion, optimizer, exp_lr_scheduler, save_path, num_epochs=training_params['num_epochs'], bs=training_params['batch_size'], device=device)
-
+    elif data_config["data"]["name"] == "ArcadeDataset":
+        save_path = "./models" + data_config["data"]["root_path"].split("/")[-1]
+        model = train_dl(
+            model,
+            dataset_dict,
+            dataset_sizes,
+            criterion,
+            optimizer,
+            exp_lr_scheduler,
+            save_path,
+            save_dir=f"./{args.training_strategy}/{data_config['data']['root_path'].split('/')[-1]}",
+            num_epochs=training_params["num_epochs"],
+            bs=2,
+            device=device
+        )
 
 
 if __name__ == '__main__':

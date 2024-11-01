@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-
+from backbones_unet.model.unet import Unet
 import torch.nn.functional as F
 from utils import *
 __all__ = ['UNext']
@@ -9,15 +9,21 @@ from timm.models.layers import DropPath, to_2tuple, trunc_normal_
 import math
 
 class UNet(nn.Module):
-    def __init__(self, in_channels = 3, out_channels = 1, init_features = 32, pretrained=False):
+    def __init__(self, in_channels = 3, out_channels = 1, init_features = 32, pretrained=True , back_bone=None):
         super().__init__()
-        self.model = torch.hub.load(
-            'mateuszbuda/brain-segmentation-pytorch', 'unet', in_channels=in_channels, out_channels=out_channels, 
-            init_features=init_features, pretrained=pretrained
-        )
+        if back_bone is None:
+            self.model = torch.hub.load(
+                'mateuszbuda/brain-segmentation-pytorch', 'unet', in_channels=in_channels, out_channels=out_channels, 
+                init_features=init_features, pretrained=pretrained
+            )
+        else:
+            self.model = UNet(
+                in_channels= in_channels,
+                out_channels= out_channels,
+                backbone=back_bone
+            )
 
         self.soft = nn.Softmax(dim =1)
-
     def forward(self, x, text_dummy):
         return self.soft(self.model(x)),0
 
