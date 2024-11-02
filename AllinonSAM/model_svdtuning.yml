@@ -26,6 +26,9 @@ training:
   batch_size: 8
   num_epochs: 200
   schedule_step: 200
+  warmup_steps: 1000
+  steps": [5000, 10000]
+  decay_factor: 0.1 
   schedule_step_factor: 0.2
   weight_decay: 1e-2
   loss: 'focal+dice'

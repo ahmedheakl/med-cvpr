@@ -12,16 +12,12 @@ import sys
 import torch
 import os
 
-source_path = os.path.join("/home/abdelrahman.elsayed/sarim_code/datasets")
+source_path = os.path.join("/home/abdelrahman.elsayed/CVPR/AllinonSAM/datasets")
 sys.path.append(source_path)
 from arcade import ArcadeDataset
 from crfseg import CRF
 import itertools
 from combined_model import CRFCombinedModel
-
-sys.path.append("/home/abdelrahman.elsayed/RLHF")
-from PPOAgent import SegmentationRLHF, train_rlhf
-from RewardModel import RewardModel
 
 
 def parse_args():
@@ -29,13 +25,13 @@ def parse_args():
 
     parser.add_argument(
         "--data_config",
-        default="/home/abdelrahman.elsayed/sarim_code/config_arcade.yml",
+        default="/home/abdelrahman.elsayed/CVPR/AllinonSAM/config_arcade.yml",
         help="data config file path",
     )
 
     parser.add_argument(
         "--model_config",
-        default="/home/abdelrahman.elsayed/sarim_code/model_svdtuning.yml",
+        default="/home/abdelrahman.elsayed/CVPR/AllinonSAM/model_svdtuning.yml",
         help="model config file path",
     )
 
@@ -174,6 +170,17 @@ def main_test(data_config, model_config, pretrained_path):
         test_end,
         device="cuda:0",
     )
+
+
+def lr_lambda(step):
+    if step < model_config["training"]["warmup_steps"]:
+        return step / model_config["training"]["warmup_steps"]  # Linear warm-up
+    elif step < model_config["training"]["steps"][0]:
+        return 1.0  # Maintain initial learning rate
+    elif step < model_config["training"]["steps"][1]:
+        return 1 / model_config["training"]["decay_factor"]  # First decay
+    else:
+        return 1 / (model_config["training"]["decay_factor"] ** 2)  # Second decay
 
 
 def main_train(
@@ -587,12 +594,12 @@ def main_train(
             weight_decay=float(training_params["weight_decay"]),
             momentum=0.9,
         )
-    exp_lr_scheduler = lr_scheduler.StepLR(
-        optimizer,
-        step_size=training_params["schedule_step"],
-        gamma=training_params["schedule_step_factor"],
-    )
 
+    # USED LAMBDALR instead of STEPLR
+    exp_lr_scheduler = lr_scheduler.LambdaLR(
+        optimizer,
+        lr_lambda,
+    )
     criterion = []
     if "dice" in training_params["loss"]:
         criterion.append(dice_loss)

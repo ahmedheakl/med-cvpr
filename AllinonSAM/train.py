@@ -36,6 +36,7 @@ def train(model, tr_dataset, val_dataset, criterion, optimizer, sav_path='./chec
     model = model.to(device)
     best_loss = 100000.0
     best_dice = 0
+    best_HD95=1000000.0
     print("Training parameters: \n----------")
     print("batch size: ", bs)
     print("num epochs: ", num_epochs)
@@ -137,7 +138,7 @@ from tqdm import tqdm
 import os
 from PIL import Image
 import numpy as np
-from utils import running_stats, dice_collated
+from utils import running_stats, dice_collated, compute_hd95,fractal_dimension
 
 import os
 from PIL import Image
@@ -145,11 +146,11 @@ import numpy as np
 from pathlib import Path
 
 # Load configuration from data_config.yml
-with open('/home/abdelrahman.elsayed/sarim_code/config_arcade.yml', 'r') as data_config_file:
+with open('/home/abdelrahman.elsayed/CVPR/AllinonSAM/config_arcade.yml', 'r') as data_config_file:
     data_config = yaml.safe_load(data_config_file)
 
 # Load configuration from model_svdtuning.yml
-with open('/home/abdelrahman.elsayed/sarim_code/model_baseline.yml', 'r') as model_config_file:
+with open('/home/abdelrahman.elsayed/CVPR/AllinonSAM/model_svdtuning.yml', 'r') as model_config_file:
     model_config = yaml.safe_load(model_config_file)
 
 def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sav_path='./checkpoints/temp.pth', num_epochs=25, bs=32, device='cuda:0', retain_graph=False, neg2pos_ratio=-1, save_dir="./validation_images", reg_multiplier=0.01):
@@ -157,6 +158,7 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
     model = model.to(device)
     best_dice = 0
     best_loss = 10000
+    best_hd95=1000000
     print_model_parameters_stats(model)
 
     # Create directories for saving images
@@ -188,6 +190,7 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
         print(f'Epoch {epoch}/{num_epochs - 1}')
         print('-' * 10)
         dataloaders = {}
+        
 
         # Each epoch has a training and validation phase
         for phase in ['train', 'val']:
@@ -199,6 +202,8 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
                 model.eval()
 
             running_loss = 0.0
+            running_hd95 = 0.0 
+            all_preds = [] # To store preds for fractal dimension
             running_dice = 0
             count = 0
             dataloaders[phase] = torch.utils.data.DataLoader(datasets[phase], batch_size=bs, shuffle=True, num_workers=4)
@@ -237,6 +242,11 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
                     running_loss += loss.item() * inputs.size(0)
                     ri, ru = running_stats(labels, preds)
                     running_dice += dice_collated(ri, ru)
+                    hd95 = compute_hd95(preds, labels)
+                    running_hd95 += hd95.item()  # Accumulate HD95
+
+                    if phase == 'val':
+                        all_preds.append(preds.cpu().numpy())
 
                     # Save images during validation (reduced frequency)
                     if phase == 'val' and epoch % 10 == 0 and batch_idx < 5:  # Save every 10 epochs, first 5 batches
@@ -254,33 +264,45 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
                             pred_img.save(os.path.join(pred_dir, img_name))
 
                 # Update progress bar
-                pbar.set_postfix({'loss': loss.item(), 'dice': running_dice / count})
+                pbar.set_postfix({'loss': loss.item(), 'dice': running_dice / count , "hd95": running_hd95/ count})
 
             if phase == 'train':
                 scheduler.step()
 
             epoch_loss = running_loss / dataset_sizes[phase]
             epoch_dice = running_dice / dataset_sizes[phase]
+            epoch_hd95 = running_hd95 / dataset_sizes[phase]
 
-            print(f'{phase} Loss: {epoch_loss:.4f} Dice: {epoch_dice:.4f}')
+            if phase == 'val':
+                # Calculate fractal dimension after validation
+                all_preds = np.concatenate(all_preds, axis=0) 
+                fractal_dim_values = []
+                for i in range(all_preds.shape[0]):
+                    fractal_dim = fractal_dimension(all_preds[i])  # Calculate for each mask
+                    fractal_dim_values.append(fractal_dim)
+
+                average_fractal_dim = np.mean(fractal_dim_values)
+                wandb.log({"average_fractal_dimension": average_fractal_dim})
+
+            print(f'{phase} Loss: {epoch_loss:.4f} Dice: {epoch_dice:.4f}  HD95: {epoch_hd95:.4f}')
 
             # Log metrics to wandb
-            wandb.log({f"{phase}_loss": epoch_loss, f"{phase}_dice": epoch_dice, "epoch": epoch})
+            wandb.log({f"{phase}_loss": epoch_loss,f"{phase}_hd95": epoch_hd95, f"{phase}_dice": epoch_dice, "epoch": epoch})
 
             if phase == 'val' and epoch_loss < best_loss:
                 best_loss = epoch_loss
                 best_dice = epoch_dice
+                best_hd95 = epoch_hd95
                 # torch.save(model.state_dict(), sav_path)
                 wandb.run.summary["best_val_loss"] = best_loss
                 wandb.run.summary["best_val_dice"] = best_dice
+                wandb.run.summary["best_val_hd95"] = best_hd95
             
             elif phase == 'val' and np.isnan(epoch_loss):
                 print("nan loss but saving model")
                 torch.save(model.state_dict(), sav_path)
 
-    print(f'Best val loss: {best_loss:4f}, best val dice: {best_dice:2f}')
-    with open('results_crf.txt', 'a') as file:
-        file.write(f'{save_dir} , Best val loss: {best_loss:4f}, best val dice: {best_dice:2f}\n')
+    print(f'Best val loss: {best_loss:4f}, best val dice: {best_dice:2f} , best Hd95: {best_hd95:2f}')
     model_save_path = f"{sav_path}/final_model.pth"
     model_dir = os.path.dirname(model_save_path)
     if not os.path.exists(model_dir):
