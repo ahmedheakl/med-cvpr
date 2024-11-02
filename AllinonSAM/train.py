@@ -139,42 +139,48 @@ import os
 from PIL import Image
 import numpy as np
 from utils import running_stats, dice_collated, compute_hd95,fractal_dimension
-
+from huggingface_hub import HfApi
 import os
 from PIL import Image
 import numpy as np
 from pathlib import Path
 
 # Load configuration from data_config.yml
-with open('/home/abdelrahman.elsayed/CVPR/AllinonSAM/config_arcade.yml', 'r') as data_config_file:
+with open('/l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/config_arcade.yml', 'r') as data_config_file:
     data_config = yaml.safe_load(data_config_file)
 
 # Load configuration from model_svdtuning.yml
-with open('/home/abdelrahman.elsayed/CVPR/AllinonSAM/model_svdtuning.yml', 'r') as model_config_file:
+with open('/l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/model_lora_decoder_encoder.yml', 'r') as model_config_file:
     model_config = yaml.safe_load(model_config_file)
-
-def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sav_path='./checkpoints/temp.pth', num_epochs=25, bs=32, device='cuda:0', retain_graph=False, neg2pos_ratio=-1, save_dir="./validation_images", reg_multiplier=0.01):
+def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, 
+             sav_path='./checkpoints/temp.pth', num_epochs=25, bs=32, 
+             device='cuda:0', retain_graph=False, neg2pos_ratio=-1, 
+             save_dir="./validation_images", reg_multiplier=0.01,
+             push_to_hub=True, hub_model_id=None, hub_token=None):
+    """
+    Training function with Hugging Face Hub integration
+    Additional params:
+    push_to_hub: bool, whether to push model to Hub
+    hub_model_id: str, format: "username/model-name"
+    hub_token: str, Hugging Face access token
+    """
     torch.cuda.empty_cache()
     model = model.to(device)
     best_dice = 0
     best_loss = 10000
-    best_hd95=1000000
+    best_hd95 = 1000000
     print_model_parameters_stats(model)
 
     # Create directories for saving images
     print(save_dir)
-    # save_dir_test = Path(save_dir)
-    # if save_dir_test.is_dir():
-    #     print("The experiment was run")
-    #     return model
     label_dir = os.path.join(save_dir, 'labels')
     pred_dir = os.path.join(save_dir, 'pred_labels')
     os.makedirs(label_dir, exist_ok=True)
     os.makedirs(pred_dir, exist_ok=True)
 
-    run_name = f"{data_config['data']['root_path'].split('/')[-1]}_model_{model_config['arch']}"
+    run_name = f"{data_config['data']['root_path'].split('/')[-1]}"
     # Initialize wandb
-    wandb.init(project="final_bench",name = run_name, config={
+    wandb.init(project="final_bench", name='drive_unfreeze_lora_rank8', config={
         "learning_rate": optimizer.param_groups[0]['lr'],
         "batch_size": bs,
         "num_epochs": num_epochs,
@@ -190,7 +196,6 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
         print(f'Epoch {epoch}/{num_epochs - 1}')
         print('-' * 10)
         dataloaders = {}
-        
 
         # Each epoch has a training and validation phase
         for phase in ['train', 'val']:
@@ -203,15 +208,13 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
 
             running_loss = 0.0
             running_hd95 = 0.0 
-            all_preds = [] # To store preds for fractal dimension
+            all_preds = []
             running_dice = 0
             count = 0
             dataloaders[phase] = torch.utils.data.DataLoader(datasets[phase], batch_size=bs, shuffle=True, num_workers=4)
 
-            # Wrap dataloader with tqdm for progress bar
             pbar = tqdm(dataloaders[phase], desc=f'{phase} Epoch {epoch}', leave=False)
 
-            # Iterate over data
             for batch_idx, (inputs, labels, text_idxs, text) in enumerate(pbar):
                 count += 1
                 inputs = inputs.to(device)
@@ -243,28 +246,24 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
                     ri, ru = running_stats(labels, preds)
                     running_dice += dice_collated(ri, ru)
                     hd95 = compute_hd95(preds, labels)
-                    running_hd95 += hd95.item()  # Accumulate HD95
+                    running_hd95 += hd95.item()
 
                     if phase == 'val':
                         all_preds.append(preds.cpu().numpy())
 
-                    # Save images during validation (reduced frequency)
-                    if phase == 'val' and epoch % 10 == 0 and batch_idx < 5:  # Save every 10 epochs, first 5 batches
-                        for i in range(min(2, inputs.size(0))):  # Save only first 2 images of the batch
+                    if phase == 'val' and epoch % 10 == 0 and batch_idx < 5:
+                        for i in range(min(2, inputs.size(0))):
                             img_name = f"epoch_{epoch}_batch_{batch_idx}_img_{i}.png"
                             
-                            # Save true label
                             label_img = labels[i].cpu().numpy() * 255
                             label_img = Image.fromarray(label_img.astype(np.uint8))
                             label_img.save(os.path.join(label_dir, img_name))
                             
-                            # Save predicted label
                             pred_img = preds[i].cpu().numpy() * 255
                             pred_img = Image.fromarray(pred_img.astype(np.uint8))
                             pred_img.save(os.path.join(pred_dir, img_name))
 
-                # Update progress bar
-                pbar.set_postfix({'loss': loss.item(), 'dice': running_dice / count , "hd95": running_hd95/ count})
+                pbar.set_postfix({'loss': loss.item(), 'dice': running_dice / count, "hd95": running_hd95 / count})
 
             if phase == 'train':
                 scheduler.step()
@@ -274,11 +273,10 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
             epoch_hd95 = running_hd95 / dataset_sizes[phase]
 
             if phase == 'val':
-                # Calculate fractal dimension after validation
                 all_preds = np.concatenate(all_preds, axis=0) 
                 fractal_dim_values = []
                 for i in range(all_preds.shape[0]):
-                    fractal_dim = fractal_dimension(all_preds[i])  # Calculate for each mask
+                    fractal_dim = fractal_dimension(all_preds[i])
                     fractal_dim_values.append(fractal_dim)
 
                 average_fractal_dim = np.mean(fractal_dim_values)
@@ -286,14 +284,13 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
 
             print(f'{phase} Loss: {epoch_loss:.4f} Dice: {epoch_dice:.4f}  HD95: {epoch_hd95:.4f}')
 
-            # Log metrics to wandb
-            wandb.log({f"{phase}_loss": epoch_loss,f"{phase}_hd95": epoch_hd95, f"{phase}_dice": epoch_dice, "epoch": epoch})
+            wandb.log({f"{phase}_loss": epoch_loss, f"{phase}_hd95": epoch_hd95, 
+                      f"{phase}_dice": epoch_dice, "epoch": epoch})
 
             if phase == 'val' and epoch_loss < best_loss:
                 best_loss = epoch_loss
                 best_dice = epoch_dice
                 best_hd95 = epoch_hd95
-                # torch.save(model.state_dict(), sav_path)
                 wandb.run.summary["best_val_loss"] = best_loss
                 wandb.run.summary["best_val_dice"] = best_dice
                 wandb.run.summary["best_val_hd95"] = best_hd95
@@ -302,7 +299,9 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
                 print("nan loss but saving model")
                 torch.save(model.state_dict(), sav_path)
 
-    print(f'Best val loss: {best_loss:4f}, best val dice: {best_dice:2f} , best Hd95: {best_hd95:2f}')
+    print(f'Best val loss: {best_loss:4f}, best val dice: {best_dice:2f}, best Hd95: {best_hd95:2f}')
+    
+    # Save the final model
     model_save_path = f"{sav_path}/final_model.pth"
     model_dir = os.path.dirname(model_save_path)
     if not os.path.exists(model_dir):
@@ -310,7 +309,58 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler, sa
     torch.save(model.state_dict(), model_save_path)
     print(f"Model saved at: {model_save_path}")
 
+    # Push to Hugging Face Hub if requested
+    if push_to_hub and hub_model_id and hub_token:
+        try:
+            # Save model config
+            config_save_path = os.path.join(model_dir, "config.json")
+            model_config = {
+                "architecture": "lora rank 8 unfreeze drive",
+                "best_val_loss": float(best_loss),
+                "best_val_dice": float(best_dice),
+                "best_val_hd95": float(best_hd95),
+                "training_params": {
+                    "batch_size": bs,
+                    "num_epochs": num_epochs,
+                    "reg_multiplier": reg_multiplier
+                }
+            }
+            
+            with open(config_save_path, 'w') as f:
+                json.dump(model_config, f, indent=2)
 
+            # Initialize Hugging Face API
+            api = HfApi()
+            
+            # Login
+            api.set_access_token(hub_token)
+            
+            # Create repository if it doesn't exist
+            try:
+                api.create_repo(repo_id=hub_model_id, exist_ok=True)
+            except Exception as e:
+                print(f"Repository creation warning (might already exist): {e}")
+
+            # Push files to hub
+            api.upload_file(
+                path_or_fileobj=model_save_path,
+                path_in_repo="final_model.pth",
+                repo_id=hub_model_id,
+                commit_message="Upload trained model weights"
+            )
+            
+            api.upload_file(
+                path_or_fileobj=config_save_path,
+                path_in_repo="config.json",
+                repo_id=hub_model_id,
+                commit_message="Upload model config"
+            )
+            
+            print(f"Successfully pushed model to Hugging Face Hub: {hub_model_id}")
+            
+        except Exception as e:
+            print(f"Error pushing to Hugging Face Hub: {e}")
+    
     # Finish wandb run
     wandb.finish()
 

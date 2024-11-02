@@ -31,5 +31,8 @@ training:
   weight_decay: 1e-2
   loss: 'focal+dice'
   reg_multiplier: 0
+  warmup_steps: 1000
+  steps: [40000, 80000]
+  decay_factor: 10
 
 # use_lora: False

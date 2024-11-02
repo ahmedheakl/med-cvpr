@@ -11,8 +11,11 @@ from train import *
 import sys
 import torch
 import os
-
-source_path = os.path.join("/home/abdelrahman.elsayed/CVPR/AllinonSAM/datasets")
+from dotenv import load_dotenv
+load_dotenv()
+HUGGING_FACE_TOKEN = os.getenv('HF_TOKEN')
+print("**************************************",HUGGING_FACE_TOKEN)
+source_path = os.path.join("./datasets/")
 sys.path.append(source_path)
 from arcade import ArcadeDataset
 from crfseg import CRF
@@ -41,7 +44,7 @@ def parse_args():
         "--save_path", default="checkpoints/temp.pth", help="pretrained model path"
     )
     parser.add_argument(
-        "--training_strategy", default="svdtuning", help="how to train the model"
+        "--training_strategy", default="lora", help="how to train the model"
     )
 
     parser.add_argument("--device", default="cuda:0", help="device to train on")
@@ -884,22 +887,43 @@ def main_train(
         )
     elif data_config["data"]["name"] == "ArcadeDataset":
         save_path = "./models" + data_config["data"]["root_path"].split("/")[-1]
+        # model = train_dl(
+        #     model,
+        #     dataset_dict,
+        #     dataset_sizes,
+        #     criterion,
+        #     optimizer,
+        #     exp_lr_scheduler,
+        #     save_path,
+        #     save_dir=f"./{args.training_strategy}/{data_config['data']['root_path'].split('/')[-1]}",
+        #     num_epochs=training_params["num_epochs"],
+        #     bs=5,
+        #     device=device,
+        #     retain_graph=retain_graph,
+        #     neg2pos_ratio=data_config["data"]["negative_to_positive_ratio"],
+        #     reg_multiplier=model_config["training"]["reg_multiplier"],
+        # )
+
         model = train_dl(
-            model,
-            dataset_dict,
-            dataset_sizes,
-            criterion,
-            optimizer,
-            exp_lr_scheduler,
-            save_path,
-            save_dir=f"./{args.training_strategy}/{data_config['data']['root_path'].split('/')[-1]}",
-            num_epochs=training_params["num_epochs"],
-            bs=5,
-            device=device,
-            retain_graph=retain_graph,
-            neg2pos_ratio=data_config["data"]["negative_to_positive_ratio"],
-            reg_multiplier=model_config["training"]["reg_multiplier"],
-        )
+                            model,
+                            dataset_dict,
+                            dataset_sizes,
+                            criterion,
+                            optimizer,
+                            exp_lr_scheduler,
+                            save_path,
+                            save_dir=f"./{args.training_strategy}/{data_config['data']['root_path'].split('/')[-1]}",
+                            num_epochs=training_params["num_epochs"],
+                            bs=5,
+                            device=device,
+                            retain_graph=retain_graph,
+                            neg2pos_ratio=data_config["data"]["negative_to_positive_ratio"],
+                            reg_multiplier=model_config["training"]["reg_multiplier"],
+                            # Add these new parameters:
+                            push_to_hub=True,
+                            hub_model_id=f"your-username/{data_config['data']['root_path'].split('/')[-1]}-{model_config['arch']}",  # This will create a model name based on your data and architecture
+                            hub_token=HUGGING_FACE_TOKEN
+                        )
         # print("Starting RLHF fine-tuning...")
         # model.train()
         # # get the training dataloader

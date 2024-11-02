@@ -1,0 +1,210 @@
+{
+    "os": "Linux-5.15.133-ql-generic-13.0-9-x86_64-with-glibc2.35",
+    "python": "3.12.1",
+    "heartbeatAt": "2024-11-02T08:51:48.174095",
+    "startedAt": "2024-11-02T08:51:47.109998",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--model_config",
+        "model_lora_decoder_encoder.yml",
+        "--data_config",
+        "config_arcade.yml",
+        "--save_path",
+        "./temp.pth"
+    ],
+    "state": "running",
+    "program": "/l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/driver_scratchpad.py",
+    "codePathLocal": "driver_scratchpad.py",
+    "codePath": "AllinonSAM/driver_scratchpad.py",
+    "git": {
+        "remote": "https://github.com/ahmedheakl/med-cvpr",
+        "commit": "121554312b5faefb540992fff6eccf54a177c512"
+    },
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2.47115625,
+        "min": 1000.0,
+        "max": 3500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.147,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.5,
+            "min": 1000.0,
+            "max": 3500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1.0,
+            "used": 0.043445587158203125
+        }
+    },
+    "gpu": "Quadro RTX 6000",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Quadro RTX 6000",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 125.55096435546875
+    }
+}

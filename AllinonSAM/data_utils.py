@@ -28,7 +28,7 @@ from data_transforms.btcv_transform import BTCV_Transform
 
 import os
 import sys
-source_path = os.path.join('/home/abdelrahman.elsayed/CVPR/AllinonSAM/datasets')
+source_path = os.path.join('/l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/datasets')
 sys.path.append(source_path)
 from isic2018 import ISIC2018_Dataset
 from polyp import Polyp_Dataset

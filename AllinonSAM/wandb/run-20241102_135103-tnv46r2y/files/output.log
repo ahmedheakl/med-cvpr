@@ -1,0 +1,21 @@
+Training parameters:
+----------
+number of trainable parameters:  6221796
+batch size:  5
+num epochs:  2
+Epoch 0/1
+----------
+train Epoch 0:   0%|                                                                                                                                                                                                                         | 0/3 [00:00<?, ?it/s]
+
+val Epoch 0:   0%|                                                                                                                                                                                                                           | 0/2 [00:00<?, ?it/s]
+val Loss: 1.0164 Dice: 0.0000  HD95: inf
+Epoch 1/1
+/l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/utils.py:58: RuntimeWarning: divide by zero encountered in log
+  coeffs = np.polyfit(np.log(sizes), np.log(counts), 1)
+train Epoch 1:  33%|█████████████████████████████████████████████████▋                                                                                                   | 1/3 [00:01<00:02,  1.10s/it, loss=0.939, dice=tensor(0.0002, device='cuda:0'), hd95=inf]
+train Loss: 0.9539 Dice: 0.0000  HD95: inf
+val Loss: 1.0104 Dice: 0.0000  HD95: inf
+
+Best val loss: 1.010399, best val dice: 0.000049, best Hd95: inf
+Model saved at: ./modelsdataset_drive/final_model.pth
+Error pushing to Hugging Face Hub: cannot access local variable 'model_config' where it is not associated with a value

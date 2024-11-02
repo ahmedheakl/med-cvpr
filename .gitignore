@@ -9,4 +9,6 @@
 *.tif
 *.bmp
 *.out
+*.env
+*.pth
 __pycache__

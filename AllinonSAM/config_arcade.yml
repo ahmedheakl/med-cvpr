@@ -14,8 +14,8 @@ data_transforms:
 
 data:
   name: ArcadeDataset
-  root_path: '/home/abdelrahman.elsayed/DIAS'
-  data_split_csv: '/home/abdelrahman.elsayed/DIAS/data_split.csv'
+  root_path: '/l/users/sarim.hashmi/for_the_little_interns/the_experiments/drive_dataset/dataset_drive'
+  data_split_csv: '/l/users/sarim.hashmi/for_the_little_interns/the_experiments/drive_dataset/dataset_drive/data_split.csv'
   fold_num: 0
   label_list: [0,1]
   label_names: ["Background", "Vein"]

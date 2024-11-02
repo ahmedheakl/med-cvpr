@@ -45,10 +45,10 @@ class ArcadeDataset(Dataset):
         print(mask_name)
         mask_path = os.path.join(self.mask_dir, mask_name)
 
-        print("Data point")
-        print("Train: " , self.is_train)
-        print("Img:" , img_path)
-        print("Mask: ", mask_path)
+        # print("Data point")
+        # print("Train: " , self.is_train)
+        # print("Img:" , img_path)
+        # print("Mask: ", mask_path)
 
         # Load and process image
         img = Image.open(img_path).convert("RGB")
