@@ -10,7 +10,7 @@ class LoRALinear(nn.Linear):
         self.trainable_lora_down = nn.Linear(in_features, r, bias=False)
         self.dropout = nn.Dropout(0.1)
         self.trainable_lora_up = nn.Linear(r, out_features, bias=False)
-        self.scale = scale
+        self.scale = 2*(r**0.5)
         self.selector = nn.Identity()
 
         nn.init.normal_(self.trainable_lora_down.weight, std=1/r)
@@ -25,7 +25,8 @@ class LoRAConv2D(nn.Conv2d):
         super().__init__(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias, padding_mode, device, dtype)
         assert type(kernel_size) is int
         self.r = r
-        self.scale = scale
+        # self.scale = scale
+        self.scale = 2*(r**0.5)
         
         self.trainable_lora_down = nn.Conv2d(
             in_channels = in_channels,
