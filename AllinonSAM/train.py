@@ -56,6 +56,7 @@ def train(
     best_loss = 100000.0
     best_dice = 0
     best_HD95 = 1000000.0
+    best_acd = float('inf')
     print("Training parameters: \n----------")
     print("batch size: ", bs)
     print("num epochs: ", num_epochs)
@@ -162,6 +163,7 @@ from utils import (
     compute_hd95,
     fractal_dimension,
     iou_coef,
+    average_closest_distance
 )
 
 import os
@@ -205,6 +207,7 @@ def train_dl(
     best_dice = 0
     best_loss = 10000
     best_hd95 = 1000000
+    best_acd = float('inf')
     print_model_parameters_stats(model)
 
     # Create directories for saving images
@@ -256,6 +259,7 @@ def train_dl(
             running_loss = 0.0
             running_hd95 = 0.0
             running_iou = 0.0
+            running_acd = 0.0
             all_preds = []  # To store preds for fractal dimension
             running_dice = 0
             count = 0
@@ -304,6 +308,15 @@ def train_dl(
                     running_iou += iou_loss.item()
 
                     if phase == "val":
+                        labels_np = labels.cpu().numpy()
+                        batch_acd = [
+                            average_closest_distance(preds[i].cpu().numpy(), labels_np[i])
+                            for i in range(len(preds))
+                        ]
+                        # Filter out any NaN values from batch_acd
+                        batch_acd = [d for d in batch_acd if not np.isnan(d)]
+                        if batch_acd:
+                            running_acd += np.mean(batch_acd)
                         all_preds.append(preds.cpu().numpy())
 
                     # Save images during validation (reduced frequency)
@@ -332,6 +345,7 @@ def train_dl(
                         "dice": running_dice / count,
                         "IoU Loss": running_iou / count,
                         "hd95": running_hd95 / count,
+                        "ACD": running_acd/count
                     }
                 )
 
@@ -342,8 +356,10 @@ def train_dl(
             epoch_dice = running_dice / dataset_sizes[phase]
             epoch_hd95 = running_hd95 / dataset_sizes[phase]
             epoch_iou = running_iou / dataset_sizes[phase]
-
+            
+               
             if phase == "val":
+                epoch_acd = running_acd / count
                 # Calculate fractal dimension after validation
                 all_preds = np.concatenate(all_preds, axis=0)
                 fractal_dim_values = []
@@ -352,9 +368,9 @@ def train_dl(
                         all_preds[i]
                     )  # Calculate for each mask
                     fractal_dim_values.append(fractal_dim)
-
+                
                 average_fractal_dim = np.mean(fractal_dim_values)
-                wandb.log({"average_fractal_dimension": average_fractal_dim})
+                wandb.log({"average_fractal_dimension": average_fractal_dim , "Validation ACD": epoch_acd})
 
             print(
                 f"{phase} Loss: {epoch_loss:.4f} Dice: {epoch_dice:.4f}  HD95: {epoch_hd95:.4f} IOU_loss: {epoch_iou:.4f}"
@@ -375,10 +391,12 @@ def train_dl(
                 best_loss = epoch_loss
                 best_dice = epoch_dice
                 best_hd95 = epoch_hd95
+                best_acd = epoch_acd
                 # torch.save(model.state_dict(), sav_path)
                 wandb.run.summary["best_val_loss"] = best_loss
                 wandb.run.summary["best_val_dice"] = best_dice
                 wandb.run.summary["best_val_hd95"] = best_hd95
+                wandb.run.summary["best_acd"] = best_acd
 
             elif phase == "val" and np.isnan(epoch_loss):
                 print("nan loss but saving model")

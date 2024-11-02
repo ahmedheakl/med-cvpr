@@ -6,6 +6,20 @@ import torch.nn as nn
 from scipy.ndimage import distance_transform_edt
 from skimage import morphology
 
+
+#  boundary points and ACD functions (From BraTS)
+def boundary_points(mask):
+    return np.argwhere(morphology.binary_erosion(mask) != mask)
+
+def average_closest_distance(prediction, ground_truth):
+    pred_boundary = boundary_points(prediction)
+    gt_boundary = boundary_points(ground_truth)
+    distances = [
+        np.min(np.linalg.norm(pred - gt_boundary, axis=1)) for pred in pred_boundary
+    ]
+    acd = np.mean(distances)
+    return acd
+
 # My implementation for the HD95 Loss function
 class HD95Loss(nn.Module):
     def __init__(self, threshold: float = 0.5, max_hd95: float = 724.6) -> None:
