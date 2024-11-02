@@ -1,0 +1,22 @@
+Training parameters:
+----------
+number of trainable parameters:  6221796
+batch size:  5
+num epochs:  2
+Epoch 0/1
+----------
+train Epoch 0:   0%|                                                                                                                                                                                                           | 0/3 [00:00<?, ?it/s]
+
+val Epoch 0:   0%|                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]
+val Loss: 0.9613 Dice: 0.0000  HD95: inf
+Epoch 1/1
+/l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/utils.py:58: RuntimeWarning: divide by zero encountered in log
+  coeffs = np.polyfit(np.log(sizes), np.log(counts), 1)
+train Epoch 1:  33%|█████████████████████████████████████████████                                                                                          | 1/3 [00:01<00:02,  1.15s/it, loss=0.958, dice=tensor(0.0002, device='cuda:0'), hd95=inf]
+train Loss: 0.9568 Dice: 0.0000  HD95: inf
+val Loss: 0.9697 Dice: 0.0000  HD95: inf
+
+Best val loss: 0.961259, best val dice: 0.000049, best Hd95: inf
+Model saved at: ./modelsdataset_drive/final_model.pth
+Repository creation warning (might already exist): Repo id must use alphanumeric chars or '-', '_', '.', '--' and '..' are forbidden, '-' and '.' cannot start or end the name, max length is 96: 'your-username/dataset_drive-Prompt Adapted SAM'.
+Error pushing to Hugging Face Hub: Repo id must use alphanumeric chars or '-', '_', '.', '--' and '..' are forbidden, '-' and '.' cannot start or end the name, max length is 96: 'your-username/dataset_drive-Prompt Adapted SAM'.

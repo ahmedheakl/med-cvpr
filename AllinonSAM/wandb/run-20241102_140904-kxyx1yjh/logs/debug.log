@@ -1,0 +1,35 @@
+2024-11-02 14:09:04,430 INFO    MainThread:3052868 [wandb_setup.py:_flush():76] Current SDK version is 0.17.5
+2024-11-02 14:09:04,431 INFO    MainThread:3052868 [wandb_setup.py:_flush():76] Configure stats pid to 3052868
+2024-11-02 14:09:04,431 INFO    MainThread:3052868 [wandb_setup.py:_flush():76] Loading settings from /home/sarim.hashmi/.config/wandb/settings
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_setup.py:_flush():76] Loading settings from /l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/wandb/settings
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'api_key': '***REDACTED***'}
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'AllinonSAM/driver_scratchpad.py', 'program_abspath': '/l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/driver_scratchpad.py', 'program': '/l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/driver_scratchpad.py'}
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_init.py:_log_setup():529] Logging user logs to /l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/wandb/run-20241102_140904-kxyx1yjh/logs/debug.log
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_init.py:_log_setup():530] Logging internal logs to /l/users/sarim.hashmi/cvpr/med-cvpr/AllinonSAM/wandb/run-20241102_140904-kxyx1yjh/logs/debug-internal.log
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_init.py:init():569] calling init triggers
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_init.py:init():576] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.0, 'batch_size': 5, 'num_epochs': 2, 'reg_multiplier': 0}
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_init.py:init():619] starting backend
+2024-11-02 14:09:04,432 INFO    MainThread:3052868 [wandb_init.py:init():623] setting up manager
+2024-11-02 14:09:04,437 INFO    MainThread:3052868 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-11-02 14:09:04,451 INFO    MainThread:3052868 [wandb_init.py:init():631] backend started and connected
+2024-11-02 14:09:04,456 INFO    MainThread:3052868 [wandb_init.py:init():720] updated telemetry
+2024-11-02 14:09:04,468 INFO    MainThread:3052868 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-11-02 14:09:05,115 INFO    MainThread:3052868 [wandb_run.py:_on_init():2435] communicating current version
+2024-11-02 14:09:05,394 INFO    MainThread:3052868 [wandb_run.py:_on_init():2444] got version response upgrade_message: "wandb version 0.18.5 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-11-02 14:09:05,394 INFO    MainThread:3052868 [wandb_init.py:init():804] starting run threads in backend
+2024-11-02 14:09:06,115 INFO    MainThread:3052868 [wandb_run.py:_console_start():2413] atexit reg
+2024-11-02 14:09:06,116 INFO    MainThread:3052868 [wandb_run.py:_redirect():2255] redirect: wrap_raw
+2024-11-02 14:09:06,116 INFO    MainThread:3052868 [wandb_run.py:_redirect():2320] Wrapping output streams.
+2024-11-02 14:09:06,116 INFO    MainThread:3052868 [wandb_run.py:_redirect():2345] Redirects installed.
+2024-11-02 14:09:06,119 INFO    MainThread:3052868 [wandb_init.py:init():847] run started, returning control to user process
+2024-11-02 14:09:14,827 INFO    MainThread:3052868 [wandb_run.py:_finish():2107] finishing run brats2024/final_bench/kxyx1yjh
+2024-11-02 14:09:14,827 INFO    MainThread:3052868 [wandb_run.py:_atexit_cleanup():2374] got exitcode: 0
+2024-11-02 14:09:14,827 INFO    MainThread:3052868 [wandb_run.py:_restore():2352] restore
+2024-11-02 14:09:14,828 INFO    MainThread:3052868 [wandb_run.py:_restore():2358] restore done
+2024-11-02 14:09:22,511 INFO    MainThread:3052868 [wandb_run.py:_footer_history_summary_info():4016] rendering history
+2024-11-02 14:09:22,512 INFO    MainThread:3052868 [wandb_run.py:_footer_history_summary_info():4048] rendering summary
+2024-11-02 14:09:22,519 INFO    MainThread:3052868 [wandb_run.py:_footer_sync_info():3975] logging synced files

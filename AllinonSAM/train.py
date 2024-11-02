@@ -314,7 +314,7 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler,
         try:
             # Save model config
             config_save_path = os.path.join(model_dir, "config.json")
-            model_config = {
+            hub_config = {
                 "architecture": "lora rank 8 unfreeze drive",
                 "best_val_loss": float(best_loss),
                 "best_val_dice": float(best_dice),
@@ -327,17 +327,18 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler,
             }
             
             with open(config_save_path, 'w') as f:
-                json.dump(model_config, f, indent=2)
+                json.dump(hub_config, f, indent=2)
 
             # Initialize Hugging Face API
             api = HfApi()
             
-            # Login
-            api.set_access_token(hub_token)
-            
             # Create repository if it doesn't exist
             try:
-                api.create_repo(repo_id=hub_model_id, exist_ok=True)
+                api.create_repo(
+                    repo_id=hub_model_id,
+                    token=hub_token,
+                    exist_ok=True
+                )
             except Exception as e:
                 print(f"Repository creation warning (might already exist): {e}")
 
@@ -346,6 +347,7 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler,
                 path_or_fileobj=model_save_path,
                 path_in_repo="final_model.pth",
                 repo_id=hub_model_id,
+                token=hub_token,
                 commit_message="Upload trained model weights"
             )
             
@@ -353,6 +355,7 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler,
                 path_or_fileobj=config_save_path,
                 path_in_repo="config.json",
                 repo_id=hub_model_id,
+                token=hub_token,
                 commit_message="Upload model config"
             )
             
@@ -360,7 +363,7 @@ def train_dl(model, datasets, dataset_sizes, criterion, optimizer, scheduler,
             
         except Exception as e:
             print(f"Error pushing to Hugging Face Hub: {e}")
-    
+
     # Finish wandb run
     wandb.finish()
 

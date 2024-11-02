@@ -67,6 +67,29 @@ def main_onetime_functions(config):
         dataset_dict[x].one_time_generate_pos_neg_list_dicts(x)
 
 
+def sanitize_model_name(name):
+    """
+    Sanitize the model name to comply with Hugging Face naming requirements:
+    - Only alphanumeric characters, hyphens and underscores
+    - No spaces
+    - Cannot start or end with hyphen or dot
+    - Max length 96 characters
+    """
+    # Replace spaces and invalid characters with hyphens
+    name = name.replace(' ', '-')
+    # Replace any other invalid characters with underscores
+    import re
+    name = re.sub(r'[^a-zA-Z0-9\-_]', '_', name)
+    # Remove multiple consecutive hyphens/underscores
+    name = re.sub(r'[-_]{2,}', '-', name)
+    # Remove leading/trailing hyphens and underscores
+    name = name.strip('-_')
+    # Truncate to maximum length (leaving room for username/)
+    name = name[:90]  # 96 - 6 chars for "user/"
+    return name
+
+
+
 def main_datautils(config, use_norm=True):
     selected_idxs = [0, 12, 42, 79, 100]
     print(config)
@@ -904,26 +927,48 @@ def main_train(
         #     reg_multiplier=model_config["training"]["reg_multiplier"],
         # )
 
+        # model = train_dl(
+        #                     model,
+        #                     dataset_dict,
+        #                     dataset_sizes,
+        #                     criterion,
+        #                     optimizer,
+        #                     exp_lr_scheduler,
+        #                     save_path,
+        #                     save_dir=f"./{args.training_strategy}/{data_config['data']['root_path'].split('/')[-1]}",
+        #                     num_epochs=training_params["num_epochs"],
+        #                     bs=5,
+        #                     device=device,
+        #                     retain_graph=retain_graph,
+        #                     neg2pos_ratio=data_config["data"]["negative_to_positive_ratio"],
+        #                     reg_multiplier=model_config["training"]["reg_multiplier"],
+        #                     # Add these new parameters:
+        #                     push_to_hub=True,
+        #                     hub_model_id=f"your-username/{data_config['data']['root_path'].split('/')[-1]}-{model_config['arch']}",  # This will create a model name based on your data and architecture
+        #                     hub_token=HUGGING_FACE_TOKEN
+        #                 )
+
         model = train_dl(
-                            model,
-                            dataset_dict,
-                            dataset_sizes,
-                            criterion,
-                            optimizer,
-                            exp_lr_scheduler,
-                            save_path,
-                            save_dir=f"./{args.training_strategy}/{data_config['data']['root_path'].split('/')[-1]}",
-                            num_epochs=training_params["num_epochs"],
-                            bs=5,
-                            device=device,
-                            retain_graph=retain_graph,
-                            neg2pos_ratio=data_config["data"]["negative_to_positive_ratio"],
-                            reg_multiplier=model_config["training"]["reg_multiplier"],
-                            # Add these new parameters:
-                            push_to_hub=True,
-                            hub_model_id=f"your-username/{data_config['data']['root_path'].split('/')[-1]}-{model_config['arch']}",  # This will create a model name based on your data and architecture
-                            hub_token=HUGGING_FACE_TOKEN
-                        )
+                    model,
+                    dataset_dict,
+                    dataset_sizes,
+                    criterion,
+                    optimizer,
+                    exp_lr_scheduler,
+                    save_path,
+                    save_dir=f"./{args.training_strategy}/{data_config['data']['root_path'].split('/')[-1]}",
+                    num_epochs=training_params["num_epochs"],
+                    bs=5,
+                    device=device,
+                    retain_graph=retain_graph,
+                    neg2pos_ratio=data_config["data"]["negative_to_positive_ratio"],
+                    reg_multiplier=model_config["training"]["reg_multiplier"],
+                    push_to_hub=True,
+                    # Sanitize the model ID
+                    hub_model_id=f"Sarim72/{sanitize_model_name(f'{data_config['data']['root_path'].split('/')[-1]}-{model_config['arch']}')}",
+                    hub_token=HUGGING_FACE_TOKEN
+                    
+                )
         # print("Starting RLHF fine-tuning...")
         # model.train()
         # # get the training dataloader

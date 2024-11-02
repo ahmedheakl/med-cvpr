@@ -26,3 +26,10 @@ config: {'learning_rate': 0.0, 'batch_size': 5, 'num_epochs': 200, 'reg_multipli
 2024-11-02 13:53:15,675 INFO    MainThread:2976289 [wandb_run.py:_redirect():2320] Wrapping output streams.
 2024-11-02 13:53:15,675 INFO    MainThread:2976289 [wandb_run.py:_redirect():2345] Redirects installed.
 2024-11-02 13:53:15,677 INFO    MainThread:2976289 [wandb_init.py:init():847] run started, returning control to user process
+2024-11-02 14:04:33,403 INFO    MainThread:2976289 [wandb_run.py:_finish():2107] finishing run brats2024/final_bench/zyhavwoz
+2024-11-02 14:04:33,404 INFO    MainThread:2976289 [wandb_run.py:_atexit_cleanup():2374] got exitcode: 0
+2024-11-02 14:04:33,404 INFO    MainThread:2976289 [wandb_run.py:_restore():2352] restore
+2024-11-02 14:04:33,404 INFO    MainThread:2976289 [wandb_run.py:_restore():2358] restore done
+2024-11-02 14:04:39,592 INFO    MainThread:2976289 [wandb_run.py:_footer_history_summary_info():4016] rendering history
+2024-11-02 14:04:39,592 INFO    MainThread:2976289 [wandb_run.py:_footer_history_summary_info():4048] rendering summary
+2024-11-02 14:04:39,599 INFO    MainThread:2976289 [wandb_run.py:_footer_sync_info():3975] logging synced files
