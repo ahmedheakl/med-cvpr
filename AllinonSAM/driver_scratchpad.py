@@ -172,6 +172,17 @@ def main_test(data_config, model_config, pretrained_path):
     )
 
 
+def lr_lambda(step):
+    if step < model_config["training"]["warmup_steps"]:
+        return step / model_config["training"]["warmup_steps"]  # Linear warm-up
+    elif step < model_config["training"]["steps"][0]:
+        return 1.0  # Maintain initial learning rate
+    elif step < model_config["training"]["steps"][1]:
+        return 1 / model_config["training"]["decay_factor"]  # First decay
+    else:
+        return 1 / (model_config["training"]["decay_factor"] ** 2)  # Second decay
+
+
 def main_train(
     data_config,
     model_config,
@@ -583,12 +594,12 @@ def main_train(
             weight_decay=float(training_params["weight_decay"]),
             momentum=0.9,
         )
-    exp_lr_scheduler = lr_scheduler.StepLR(
-        optimizer,
-        step_size=training_params["schedule_step"],
-        gamma=training_params["schedule_step_factor"],
-    )
 
+    # USED LAMBDALR instead of STEPLR
+    exp_lr_scheduler = lr_scheduler.LambdaLR(
+        optimizer,
+        lr_lambda,
+    )
     criterion = []
     if "dice" in training_params["loss"]:
         criterion.append(dice_loss)
