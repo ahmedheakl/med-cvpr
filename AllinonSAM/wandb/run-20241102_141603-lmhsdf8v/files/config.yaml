@@ -8,7 +8,7 @@ batch_size:
   value: 5
 num_epochs:
   desc: null
-  value: 2
+  value: 200
 reg_multiplier:
   desc: null
   value: 0
@@ -20,7 +20,7 @@ _wandb:
     framework: torch
     is_jupyter_run: false
     is_kaggle_kernel: true
-    start_time: 1730542412
+    start_time: 1730542563
     t:
       1:
       - 1

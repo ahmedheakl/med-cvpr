@@ -1,11 +1,11 @@
 {
   "architecture": "lora rank 8 unfreeze drive",
-  "best_val_loss": 1.002983848253886,
-  "best_val_dice": 4.8579193389741704e-05,
-  "best_val_hd95": Infinity,
+  "best_val_loss": 0.5924517611662546,
+  "best_val_dice": 0.4400695562362671,
+  "best_val_hd95": 15.963991730090848,
   "training_params": {
     "batch_size": 5,
-    "num_epochs": 2,
+    "num_epochs": 200,
     "reg_multiplier": 0
   }
 }

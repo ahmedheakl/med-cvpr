@@ -45,3 +45,5 @@ Model saved at: ./modelsdataset_drive/final_model.pth
 
 
 
+final_model.pth: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 724M/724M [00:58<00:00, 12.4MB/s]
+Successfully pushed model to Hugging Face Hub: Sarim72/dataset_drive-Prompt-Adapted-SAM
