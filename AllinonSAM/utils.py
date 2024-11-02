@@ -3,6 +3,129 @@ import torch
 import torch.nn.functional as F
 import argparse
 import torch.nn as nn
+from scipy.ndimage import distance_transform_edt
+from skimage import morphology
+
+def boxcount(Z, k):
+    """
+    returns a count of squares of size kxk in which there are both colours (black and white), ie. the sum of numbers
+    in those squares is not 0 or k^2
+    Z: np.array, matrix to be checked, needs to be 2D
+    k: int, size of a square
+    """
+    S = np.add.reduceat(
+        np.add.reduceat(Z, np.arange(0, Z.shape[0], k), axis=0),
+        np.arange(0, Z.shape[1], k), axis=1)  # jumps by powers of 2 squares
+
+    # We count non-empty (0) and non-full boxes (k*k)
+    return len(np.where((S > 0) & (S < k * k))[0])
+
+
+def fractal_dimension(Z, threshold=0.5):
+    """
+    calculate fractal dimension of an object in an array defined to be above certain threshold as a count of squares
+    with both black and white pixels for a sequence of square sizes. The dimension is the a coefficient to a poly fit
+    to log(count) vs log(size) as defined in the sources.
+    :param Z: np.array, must be 2D
+    :param threshold: float, a thr to distinguish background from foreground and pick up the shape, originally from
+    (0, 1) for a scaled arr but can be any number, generates boolean array
+    :return: coefficients to the poly fit, fractal dimension of a shape in the given arr
+    """
+    # Only for 2d image
+    assert (len(Z.shape) == 2)
+
+    # Transform Z into a binary array
+    Z = (Z < threshold)
+
+    # Minimal dimension of image
+    p = min(Z.shape)
+
+    # Greatest power of 2 less than or equal to p
+    n = 2 ** np.floor(np.log(p) / np.log(2))
+
+    # Extract the exponent
+    n = int(np.log(n) / np.log(2))
+
+    # Build successive box sizes (from 2**n down to 2**1)
+    sizes = 2 ** np.arange(n, 1, -1)
+
+    # Actual box counting with decreasing size
+    counts = []
+    for size in sizes:
+        counts.append(boxcount(Z, size))
+
+    # Fit the successive log(sizes) with log (counts)
+    coeffs = np.polyfit(np.log(sizes), np.log(counts), 1)
+    return -coeffs[0]
+
+
+def compute_hd95(pred, target, pixel_spacing=None):
+    """
+    Compute the 95th percentile Hausdorff Distance between binary segmentation masks.
+    
+    Args:
+        pred (torch.Tensor): Predicted binary segmentation mask (B, H, W)
+        target (torch.Tensor): Ground truth binary segmentation mask (B, H, W)
+        pixel_spacing (tuple, optional): Pixel spacing in (y, x) format. Defaults to (1.0, 1.0)
+    
+    Returns:
+        torch.Tensor: 95th percentile Hausdorff Distance
+    """
+    if pixel_spacing is None:
+        pixel_spacing = (1.0, 1.0)
+
+    def compute_surface_distances(mask1, mask2, spacing):
+        """Compute surface distances between binary masks."""
+        mask1 = mask1.cpu().numpy()
+        mask2 = mask2.cpu().numpy()
+        
+        # Convert to boolean arrays
+        mask1 = mask1 > 0.5
+        mask2 = mask2 > 0.5
+        
+        # Distance transforms
+        dist1 = distance_transform_edt(~mask1, sampling=spacing)
+        dist2 = distance_transform_edt(~mask2, sampling=spacing)
+        
+        # Get surface points
+        surface1 = np.logical_xor(mask1, morphology.binary_erosion(mask1))
+        surface2 = np.logical_xor(mask2, morphology.binary_erosion(mask2))
+        
+        # Get distances from surface points
+        distances1 = dist2[surface1]
+        distances2 = dist1[surface2]
+        
+        return distances1, distances2
+
+    def compute_hd95_single(pred_mask, target_mask, spacing):
+        """Compute HD95 for a single pair of masks."""
+        distances1, distances2 = compute_surface_distances(pred_mask, target_mask, spacing)
+        
+        if len(distances1) == 0 and len(distances2) == 0:
+            return 0.0  # Both masks are empty
+        elif len(distances1) == 0 or len(distances2) == 0:
+            return np.inf  # One mask is empty
+        
+        # Compute 95th percentile of distances
+        dist1_95 = np.percentile(distances1, 95)
+        dist2_95 = np.percentile(distances2, 95)
+        
+        return max(dist1_95, dist2_95)
+
+    # Handle batch dimension
+    if len(pred.shape) == 4:  # (B, C, H, W)
+        pred = pred.squeeze(1)
+    if len(target.shape) == 4:
+        target = target.squeeze(1)
+    
+    batch_size = pred.shape[0]
+    hd95_values = []
+    
+    for i in range(batch_size):
+        hd95 = compute_hd95_single(pred[i], target[i], pixel_spacing)
+        hd95_values.append(hd95)
+    
+    return torch.tensor(np.mean(hd95_values)).to(pred.device)
 
 def dice_coef(y_true, y_pred, smooth=1):
     # print(y_pred.shape, y_true.shape)

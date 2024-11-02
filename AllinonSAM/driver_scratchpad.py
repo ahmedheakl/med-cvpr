@@ -12,16 +12,12 @@ import sys
 import torch
 import os
 
-source_path = os.path.join("/home/abdelrahman.elsayed/sarim_code/datasets")
+source_path = os.path.join("/home/abdelrahman.elsayed/CVPR/AllinonSAM/datasets")
 sys.path.append(source_path)
 from arcade import ArcadeDataset
 from crfseg import CRF
 import itertools
 from combined_model import CRFCombinedModel
-
-sys.path.append("/home/abdelrahman.elsayed/RLHF")
-from PPOAgent import SegmentationRLHF, train_rlhf
-from RewardModel import RewardModel
 
 
 def parse_args():
@@ -29,13 +25,13 @@ def parse_args():
 
     parser.add_argument(
         "--data_config",
-        default="/home/abdelrahman.elsayed/sarim_code/config_arcade.yml",
+        default="/home/abdelrahman.elsayed/CVPR/AllinonSAM/config_arcade.yml",
         help="data config file path",
     )
 
     parser.add_argument(
         "--model_config",
-        default="/home/abdelrahman.elsayed/sarim_code/model_svdtuning.yml",
+        default="/home/abdelrahman.elsayed/CVPR/AllinonSAM/model_svdtuning.yml",
         help="model config file path",
     )
 
