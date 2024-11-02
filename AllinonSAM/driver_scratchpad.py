@@ -596,7 +596,14 @@ def main_train(
         )
 
     # USED LAMBDALR instead of STEPLR
-    exp_lr_scheduler = lr_scheduler.LambdaLR(
+    if training_params["schedular"] == "step":
+        exp_lr_scheduler = lr_scheduler.StepLR(
+                optimizer,
+                step_size=training_params["schedule_step"],
+                gamma=training_params["schedule_step_factor"],
+        )
+    else:
+        exp_lr_scheduler = lr_scheduler.LambdaLR(
         optimizer,
         lr_lambda,
     )

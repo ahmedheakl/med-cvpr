@@ -6,6 +6,51 @@ import torch.nn as nn
 from scipy.ndimage import distance_transform_edt
 from skimage import morphology
 
+# My implementation for the HD95 Loss function
+class HD95Loss(nn.Module):
+    def __init__(self, threshold: float = 0.5, max_hd95: float = 724.6) -> None:
+        super(HD95Loss, self).__init__()
+        self.threshold = threshold
+        self.max_hd95 = max_hd95
+
+    def forward(self, preds: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+        preds_binary = (preds > self.threshold).float()
+        targets_binary = (targets > self.threshold).float()
+
+        hd95 = torch.zeros(preds.size(0), device=preds.device)
+        
+        for i in range(preds.size(0)):
+            hd95[i] = self.compute_hd95(preds_binary[i], targets_binary[i])
+        
+        # Normalize HD95 to the range [0, 1]
+        hd95_normalized = hd95 / self.max_hd95
+        
+        return hd95_normalized.mean()
+
+    def compute_hd95(self, pred_mask: torch.Tensor, target_mask: torch.Tensor) -> torch.Tensor:
+        pred_coords = self.get_coordinates(pred_mask)
+        target_coords = self.get_coordinates(target_mask)
+        
+        if len(pred_coords) == 0 or len(target_coords) == 0:
+            return torch.tensor(float(14500), device=pred_mask.device)
+
+        distances = []
+        for p in pred_coords:
+            d = self.pairwise_distance(p, target_coords)
+            distances.append(d)
+        
+        hd95 = np.percentile(distances, 95)
+        return torch.tensor(hd95, device=pred_mask.device)
+    
+    def get_coordinates(self, mask: torch.Tensor) -> np.ndarray:
+        mask = mask.cpu().numpy()
+        coords = np.argwhere(mask > 0)
+        return coords
+
+    def pairwise_distance(self, point: np.ndarray, points: np.ndarray) -> float:
+        dists = np.linalg.norm(points - point, axis=1)
+        return np.min(dists)
+
 def boxcount(Z, k):
     """
     returns a count of squares of size kxk in which there are both colours (black and white), ie. the sum of numbers
