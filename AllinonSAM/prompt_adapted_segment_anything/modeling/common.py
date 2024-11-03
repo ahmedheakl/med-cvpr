@@ -9,6 +9,8 @@ import torch.nn as nn
 
 from typing import Type
 from .svd_layers import SVDLinear
+from .SALT_layers_please_work import SALTLinear
+# from .SALT_layers_3 import SALTLinear , SALTConv2d
 from .lora_layers import LoRAConv2D, LoRALinear
 
 class MLPBlock(nn.Module):
@@ -25,8 +27,13 @@ class MLPBlock(nn.Module):
             self.lin1 = LoRALinear(embedding_dim, mlp_dim)
             self.lin2 = LoRALinear(mlp_dim, embedding_dim)
         else:
-            self.lin1 = SVDLinear(embedding_dim, mlp_dim, mlp_transform=mlp_transform)
-            self.lin2 = SVDLinear(mlp_dim, embedding_dim, mlp_transform=mlp_transform)
+            # self.lin1 = SVDLinear(embedding_dim, mlp_dim, mlp_transform=mlp_transform)
+            # self.lin2 = SVDLinear(mlp_dim, embedding_dim, mlp_transform=mlp_transform)
+            rank_value = 256
+            # print("\nEmbedding dim in MLP Block is" ,embedding_dim)
+            # print("\n no need for MLP transform" , mlp_transform)
+            self.lin1 = SALTLinear(embedding_dim, mlp_dim, rank=rank_value , r_lora=128)
+            self.lin2 = SALTLinear(mlp_dim, embedding_dim, rank=rank_value , r_lora=128)
         self.act = act()
 
     def forward(self, x: torch.Tensor, output_loss=True) -> torch.Tensor:

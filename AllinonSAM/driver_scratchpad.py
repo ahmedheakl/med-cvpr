@@ -17,8 +17,7 @@ sys.path.append(source_path)
 from arcade import ArcadeDataset
 from crfseg import CRF
 import itertools
-from combined_model import CRFCombinedModel
-
+from utils import CosineAnnealingWarmupScheduler
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -595,7 +594,16 @@ def main_train(
             momentum=0.9,
         )
 
-    # USED LAMBDALR instead of STEPLR
+    # USED LAMBDALR or CosineAnnealing instead of STEPLR
+    if training_params["scheduler"] == "cosine_warmup":
+        return CosineAnnealingWarmupScheduler(
+            optimizer,
+            warmup_epochs=training_params["warmup_epochs"],#TODO: Add it the config file (organize it in more good way),
+            total_epochs=training_params["num_epochs"],
+            min_lr=training_params["min_lr"] , #TODO: Add it the config file (organize it in more good way)
+            warmup_start_lr=training_params["lr"]
+        )
+    # I STILL Use this for some of my experiments thats why I am keeping it
     if training_params["schedular"] == "step":
         exp_lr_scheduler = lr_scheduler.StepLR(
                 optimizer,

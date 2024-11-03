@@ -56,7 +56,7 @@ def train(
     best_loss = 100000.0
     best_dice = 0
     best_HD95 = 1000000.0
-    best_acd = float('inf')
+    best_acd = float("inf")
     print("Training parameters: \n----------")
     print("batch size: ", bs)
     print("num epochs: ", num_epochs)
@@ -163,7 +163,7 @@ from utils import (
     compute_hd95,
     fractal_dimension,
     iou_coef,
-    average_closest_distance
+    average_closest_distance,
 )
 
 import os
@@ -207,7 +207,7 @@ def train_dl(
     best_dice = 0
     best_loss = 10000
     best_hd95 = 1000000
-    best_acd = float('inf')
+    best_acd = float("inf")
     print_model_parameters_stats(model)
 
     # Create directories for saving images
@@ -222,6 +222,8 @@ def train_dl(
     os.makedirs(pred_dir, exist_ok=True)
 
     run_name = f"{data_config['data']['root_path'].split('/')[-1]}_model_{model_config['arch']}"
+    if model_config["use_salt"]:
+        run_name = f"{data_config['data']['root_path'].split('/')[-1]}_model_{model_config['arch']}_ft_salt_{model_config['salt']['type']}_svd_{model_config['salt']['svd_rank_linear']}_svd_conv_{model_config['salt']['svd_rank_conv2d']}_loRA_{model_config['salt']['r_lora']}"
     # Initialize wandb
     wandb.init(
         project="CVPR",
@@ -233,6 +235,10 @@ def train_dl(
             "reg_multiplier": reg_multiplier,
         },
     )
+
+
+    for name, param in model.named_parameters():
+        print(name)
 
     print("Training parameters: \n----------")
     print(
@@ -291,7 +297,7 @@ def train_dl(
                             seg_loss += c(outputs, labels.float())
                     loss += seg_loss
                     loss += reg_loss * reg_multiplier
-                    iou_loss = iou_weight * (1 - iou_coef(labels , outputs>0.5))
+                    iou_loss = iou_weight * (1 - iou_coef(labels, outputs > 0.5))
                     loss += iou_loss
 
                     if phase == "train":
@@ -310,7 +316,9 @@ def train_dl(
                     if phase == "val":
                         labels_np = labels.cpu().numpy()
                         batch_acd = [
-                            average_closest_distance(preds[i].cpu().numpy(), labels_np[i])
+                            average_closest_distance(
+                                preds[i].cpu().numpy(), labels_np[i]
+                            )
                             for i in range(len(preds))
                         ]
                         # Filter out any NaN values from batch_acd
@@ -345,7 +353,7 @@ def train_dl(
                         "dice": running_dice / count,
                         "IoU Loss": running_iou / count,
                         "hd95": running_hd95 / count,
-                        "ACD": running_acd/count
+                        "ACD": running_acd / count,
                     }
                 )
 
@@ -356,8 +364,7 @@ def train_dl(
             epoch_dice = running_dice / dataset_sizes[phase]
             epoch_hd95 = running_hd95 / dataset_sizes[phase]
             epoch_iou = running_iou / dataset_sizes[phase]
-            
-               
+
             if phase == "val":
                 epoch_acd = running_acd / count
                 # Calculate fractal dimension after validation
@@ -368,9 +375,14 @@ def train_dl(
                         all_preds[i]
                     )  # Calculate for each mask
                     fractal_dim_values.append(fractal_dim)
-                
+
                 average_fractal_dim = np.mean(fractal_dim_values)
-                wandb.log({"average_fractal_dimension": average_fractal_dim , "Validation ACD": epoch_acd})
+                wandb.log(
+                    {
+                        "average_fractal_dimension": average_fractal_dim,
+                        "Validation ACD": epoch_acd,
+                    }
+                )
 
             print(
                 f"{phase} Loss: {epoch_loss:.4f} Dice: {epoch_dice:.4f}  HD95: {epoch_hd95:.4f} IOU_loss: {epoch_iou:.4f}"

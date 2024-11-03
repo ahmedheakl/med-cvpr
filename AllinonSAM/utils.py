@@ -5,7 +5,11 @@ import argparse
 import torch.nn as nn
 from scipy.ndimage import distance_transform_edt
 from skimage import morphology
-
+from medpy.metric.binary import hd95
+import math
+from torch.optim import Optimizer
+from torch.optim.lr_scheduler import _LRScheduler
+import warnings
 
 #  boundary points and ACD functions (From BraTS)
 def boundary_points(mask):
@@ -20,50 +24,111 @@ def average_closest_distance(prediction, ground_truth):
     acd = np.mean(distances)
     return acd
 
-# My implementation for the HD95 Loss function
-class HD95Loss(nn.Module):
-    def __init__(self, threshold: float = 0.5, max_hd95: float = 724.6) -> None:
-        super(HD95Loss, self).__init__()
+# Implementation for CosineAnnealing+warmup (Linear) LR
+class CosineAnnealingWarmupScheduler(_LRScheduler):
+    """
+    Implements Cosine Annealing with Warmup learning rate scheduler.
+    
+    Args:
+        optimizer (Optimizer): Wrapped optimizer
+        warmup_epochs (int): Number of epochs for warmup
+        total_epochs (int): Total number of training epochs
+        min_lr (float): Minimum learning rate after cosine annealing
+        warmup_start_lr (float): Initial learning rate for warmup
+        verbose (bool): If True, prints a message to stdout for each update
+    """
+    def __init__(
+        self,
+        optimizer: Optimizer,
+        warmup_epochs: int,
+        total_epochs: int,
+        min_lr: float = 1e-6,
+        warmup_start_lr: float = 1e-6,
+        verbose: bool = False
+    ):
+        self.warmup_epochs = warmup_epochs
+        self.total_epochs = total_epochs
+        self.min_lr = min_lr
+        self.warmup_start_lr = warmup_start_lr
+        self.max_lrs = [group['lr'] for group in optimizer.param_groups]
+        
+        super().__init__(optimizer, verbose)
+        
+    def get_lr(self):
+        if not self._get_lr_called_within_step:
+            warnings.warn("To get the last learning rate computed by the scheduler, "
+                        "please use `get_last_lr()`.", UserWarning)
+        
+        epoch = self.last_epoch
+        
+        # Warmup phase
+        if epoch < self.warmup_epochs:
+            return self._get_warmup_lr(epoch)
+        
+        # Cosine annealing phase
+        return self._get_cosine_lr(epoch)
+    
+    def _get_warmup_lr(self, epoch):
+        """Linear warmup"""
+        alpha = epoch / self.warmup_epochs
+        return [self.warmup_start_lr + alpha * (max_lr - self.warmup_start_lr)
+                for max_lr in self.max_lrs]
+    
+    def _get_cosine_lr(self, epoch):
+        """Cosine annealing after warmup"""
+        epoch = epoch - self.warmup_epochs
+        cosine_epochs = self.total_epochs - self.warmup_epochs
+        
+        alpha = epoch / cosine_epochs
+        cosine_factor = 0.5 * (1 + math.cos(math.pi * alpha))
+        
+        return [self.min_lr + (max_lr - self.min_lr) * cosine_factor
+                for max_lr in self.max_lrs]
+
+
+# My implementation for the HD95 Loss function from medpy
+# https://loli.github.io/medpy/_modules/medpy/metric/binary.html
+class HDLoss(nn.Module):
+    def __init__(self, threshold=0.5, max_hd95=14500):
+        super().__init__()
         self.threshold = threshold
         self.max_hd95 = max_hd95
-
+    
     def forward(self, preds: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+        """
+        Compute the 95th percentile of the Hausdorff Distance.
+        
+        Args:
+            preds: Predicted masks (B x H x W)
+            targets: Ground truth masks (B x H x W)
+            
+        Returns:
+            Mean normalized HD95 across the batch
+        """
         preds_binary = (preds > self.threshold).float()
         targets_binary = (targets > self.threshold).float()
-
-        hd95 = torch.zeros(preds.size(0), device=preds.device)
+        
+        hd95_values = torch.zeros(preds.size(0), device=preds.device)
         
         for i in range(preds.size(0)):
-            hd95[i] = self.compute_hd95(preds_binary[i], targets_binary[i])
+            pred_np = preds_binary[i].cpu().numpy()
+            target_np = targets_binary[i].cpu().numpy()
+            
+            # Handle empty masks
+            if not np.any(pred_np) or not np.any(target_np):
+                hd95_values[i] = self.max_hd95
+                continue
+            
+            try:
+                # medpy.metric.binary.hd95 computes symmetric HD95
+                value = hd95(pred_np, target_np)
+                hd95_values[i] = torch.tensor(value, device=preds.device)
+            except Exception as e:
+                # Fallback to maximum distance in case of errors
+                hd95_values[i] = self.max_hd95
         
-        # Normalize HD95 to the range [0, 1]
-        hd95_normalized = hd95 / self.max_hd95
-        
-        return hd95_normalized.mean()
-
-    def compute_hd95(self, pred_mask: torch.Tensor, target_mask: torch.Tensor) -> torch.Tensor:
-        pred_coords = self.get_coordinates(pred_mask)
-        target_coords = self.get_coordinates(target_mask)
-        
-        if len(pred_coords) == 0 or len(target_coords) == 0:
-            return torch.tensor(float(14500), device=pred_mask.device)
-
-        distances = []
-        for p in pred_coords:
-            d = self.pairwise_distance(p, target_coords)
-            distances.append(d)
-        
-        hd95 = np.percentile(distances, 95)
-        return torch.tensor(hd95, device=pred_mask.device)
-    
-    def get_coordinates(self, mask: torch.Tensor) -> np.ndarray:
-        mask = mask.cpu().numpy()
-        coords = np.argwhere(mask > 0)
-        return coords
-
-    def pairwise_distance(self, point: np.ndarray, points: np.ndarray) -> float:
-        dists = np.linalg.norm(points - point, axis=1)
-        return np.min(dists)
+        # Normalize to [0, 1]
+        return (hd95_values / self.max_hd95).mean()
 
 def boxcount(Z, k):
     """
