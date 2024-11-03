@@ -41,6 +41,6 @@ salt:
   type: SALT_LoRA_adapt_shift
   svd_rank_linear: 700
   svd_rank_conv2d: 200
-  r_lora: 128
+  r_lora: 256
 
 # use_lora: False

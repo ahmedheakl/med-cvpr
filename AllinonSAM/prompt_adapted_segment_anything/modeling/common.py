@@ -32,8 +32,8 @@ class MLPBlock(nn.Module):
             rank_value = 200
             # print("\nEmbedding dim in MLP Block is" ,embedding_dim)
             # print("\n no need for MLP transform" , mlp_transform)
-            self.lin1 = SALTLinear(embedding_dim, mlp_dim, rank=rank_value , r_lora=128)
-            self.lin2 = SALTLinear(mlp_dim, embedding_dim, rank=rank_value , r_lora=128)
+            self.lin1 = SALTLinear(embedding_dim, mlp_dim, rank=rank_value , r_lora=256)
+            self.lin2 = SALTLinear(mlp_dim, embedding_dim, rank=rank_value , r_lora=256)
         self.act = act()
 
     def forward(self, x: torch.Tensor, output_loss=True) -> torch.Tensor:
