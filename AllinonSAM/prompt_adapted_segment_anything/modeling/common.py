@@ -29,7 +29,7 @@ class MLPBlock(nn.Module):
         else:
             # self.lin1 = SVDLinear(embedding_dim, mlp_dim, mlp_transform=mlp_transform)
             # self.lin2 = SVDLinear(mlp_dim, embedding_dim, mlp_transform=mlp_transform)
-            rank_value = 256
+            rank_value = 200
             # print("\nEmbedding dim in MLP Block is" ,embedding_dim)
             # print("\n no need for MLP transform" , mlp_transform)
             self.lin1 = SALTLinear(embedding_dim, mlp_dim, rank=rank_value , r_lora=128)

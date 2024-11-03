@@ -209,7 +209,7 @@ class Neck(nn.Module):
             self.conv1 = LoRAConv2D(embed_dim, out_chans, kernel_size=1, bias=False)
             self.conv2 = LoRAConv2D(out_chans, out_chans, kernel_size=3, padding=1, bias=False)
         else:
-            rank_value = 256
+            rank_value = 200
             self.conv1 = SALTConv2d(embed_dim, out_chans, kernel_size=1, bias=False , rank=rank_value , r_lora=128)
             self.conv2 = SALTConv2d(out_chans, out_chans, kernel_size=3, padding=1, bias=False , rank=rank_value , r_lora=128)
             # self.conv1 = SVDConv2d(embed_dim, out_chans, kernel_size=1, bias=False, mlp_transform=mlp_transform)
@@ -330,7 +330,7 @@ class Attention(nn.Module):
             self.qkv = LoRALinear(dim, dim * 3, bias=qkv_bias)
             self.proj = LoRALinear(dim, dim)
         else:
-            rank_value = 768
+            rank_value = 700
             self.qkv = SALTLinear(dim, dim * 3, bias=qkv_bias , r_lora=128 , rank=rank_value)
             self.proj = SALTLinear(dim, dim , r_lora=128 , rank=rank_value)
             # self.qkv = SVDLinear(dim, dim * 3, bias=qkv_bias, mlp_transform=mlp_transform)
