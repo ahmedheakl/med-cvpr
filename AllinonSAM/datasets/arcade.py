@@ -41,14 +41,14 @@ class ArcadeDataset(Dataset):
         image_name = os.path.splitext(os.path.basename(img_name))[0]
         img_path = os.path.join(self.image_dir, image_name+'.png')
         mask_name = os.path.splitext(image_name)[0] + '_mask.png'
-        print(self.mask_dir)
-        print(mask_name)
+        # print(self.mask_dir)
+        # print(mask_name)
         mask_path = os.path.join(self.mask_dir, mask_name)
 
-        print("Data point")
-        print("Train: " , self.is_train)
-        print("Img:" , img_path)
-        print("Mask: ", mask_path)
+        # print("Data point")
+        # print("Train: " , self.is_train)
+        # print("Img:" , img_path)
+        # print("Mask: ", mask_path)
 
         # Load and process image
         img = Image.open(img_path).convert("RGB")
